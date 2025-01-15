@@ -6,7 +6,7 @@ Introducing the Fit Tracker, a comprehensive fitness tool designed to make worki
 Along with this accessible database of possible exercises, users will also be able to input their fitness goals such as weight loss or growth, equipment availability, and free time during the week. This will allow the Fit Tracker to narrow down the pool of exercises recommended to users to fit their needs, and efficiently schedule and direct their workouts for the results they desire.
 
 
-Software Engineering Group Project Proposal
 Team Members:
+
 Salvador Solana Allende: ssolanaallende@scu.edu
 Brandon Nhin: bnhin@scu.edu
