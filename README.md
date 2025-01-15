@@ -9,4 +9,5 @@ Along with this accessible database of possible exercises, users will also be ab
 Team Members:
 
 Salvador Solana Allende: ssolanaallende@scu.edu
+
 Brandon Nhin: bnhin@scu.edu
