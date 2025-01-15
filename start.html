@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="normalize.css/normalize.css">
+    <link rel="stylesheet" href="start.css">
+    <title>gym</title>
+</head>
+<body>
+    <div class="titulo"><img src="img/logo.jpeg" alt="" class="titulo"></div>
+
+    <div class="form_container"> 
+        <div class="form_group">
+            <input type="number"  id="peso" min="0" class="form_input" name="peso" required oninput="limitarCaracteres(this, 3)" placeholder=" ">
+            <label for="peso" class="form_label">Weight (kg)</label>
+            <span class="form_line"></span>
+        </div>
+        <div class="form_group">
+            <i class="icon fa-solid fa-eye" id="eye"></i>
+            <input type="number" min="0" id="altura" class="form_input" name="altura" oninput="limitarCaracteres(this, 3)" placeholder=" ">
+            <label for="altura" class="form_label">Height(cm)</label>
+            <span class="form_line"></span>
+        </div>
+    </div>
+    <div class="cont-calcular">
+        <button onclick="calcularIMC()" class="btn-calcular">Calcular IMC</button>
+        <div id="resultado"></div>
+    </div>
+
+    <div class="cont-calcular">
+        <button onclick="mostrarPlan()" class="btn-calcular" id="btn-calcular">Mostrar plan</button>
+        <div id="resultado2" class="plan-container" style="display: none;"></div>
+        <div class="scene" id="scene">
+            <canvas id="animationCanvas" width="800" height="400"></canvas>
+        </div>
+    </div>
+
+</body>
+<script src="start.js"></script>
+</html>
