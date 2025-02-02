@@ -4,70 +4,479 @@
     "type": "cardio",
     "muscleGroup": "legs",
     "name": "Running",
-    "description": "Run at a moderate pace for 30 minutes."
+    "description": "Run at a moderate pace for 30 minutes.",
+    "time (minutes)": "30"
   },
   {
     "code": "002",
     "type": "strength",
     "muscleGroup": "arms",
     "name": "Bicep Curls",
-    "description": "Perform 3 sets of 12 reps with dumbbells."
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
   },
   {
     "code": "003",
     "type": "cardio",
     "muscleGroup": "full body",
     "name": "Jumping Jacks",
-    "description": "Perform 3 sets of 20 reps."
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "4.5"
   },
   {
     "code": "004",
     "type": "strength",
     "muscleGroup": "chest",
     "name": "Push-ups",
-    "description": "Perform 3 sets of 15 reps."
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
   },
   {
     "code": "005",
     "type": "cardio",
     "muscleGroup": "legs",
     "name": "Cycling",
-    "description": "Cycle at a moderate pace for 30 minutes."
+    "description": "Cycle at a moderate pace for 30 minutes.",
+    "time (minutes)": "30"
   },
-  
   {
     "code": "006",
     "type": "strength",
     "muscleGroup": "back",
     "name": "Pull-ups",
-    "description": "Perform 3 sets of 10 reps."
+    "description": "Perform 3 sets of 10 reps.",
+    "time (minutes)": "5"
   },
   {
     "code": "007",
     "type": "cardio",
     "muscleGroup": "full body",
     "name": "Burpees",
-    "description": "Perform 3 sets of 15 reps."
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
   },
   {
     "code": "008",
     "type": "strength",
     "muscleGroup": "legs",
     "name": "Squats",
-    "description": "Perform 3 sets of 20 reps."
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
   },
   {
     "code": "009",
     "type": "cardio",
     "muscleGroup": "full body",
     "name": "Mountain Climbers",
-    "description": "Perform 3 sets of 30 seconds."
+    "description": "Perform 3 sets of 30 seconds.",
+    "time (minutes)": "4"
   },
   {
     "code": "010",
     "type": "strength",
     "muscleGroup": "core",
     "name": "Plank",
-    "description": "Hold for 3 sets of 1 minute."
+    "description": "Hold for 3 sets of 1 minute.",
+    "time (minutes)": "5"
+  },
+  {
+    "code": "011",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Lunges",
+    "description": "Perform 3 sets of 15 reps per leg.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "012",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Tricep Dips",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "013",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Chest Press",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "014",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Bent Over Rows",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "015",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Russian Twists",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
+  },
+  {
+    "code": "016",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Leg Press",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "017",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Hammer Curls",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "018",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Incline Bench Press",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "019",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Deadlifts",
+    "description": "Perform 3 sets of 10 reps.",
+    "time (minutes)": "5"
+  },
+  {
+    "code": "020",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Bicycle Crunches",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
+  },
+  {
+    "code": "021",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Calf Raises",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
+  },
+  {
+    "code": "022",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Overhead Tricep Extension",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "023",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Chest Fly",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "024",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Lat Pulldowns",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "025",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Leg Raises",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
+  },
+  {
+    "code": "026",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Leg Curls",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "027",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Concentration Curls",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "028",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Decline Bench Press",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "029",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Seated Rows",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "030",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Sit-ups",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
+  },
+  {
+    "code": "031",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Step-ups",
+    "description": "Perform 3 sets of 15 reps per leg.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "032",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Skull Crushers",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "033",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Cable Crossovers",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "034",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "T-Bar Rows",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "035",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Hanging Leg Raises",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
+  },
+  {
+    "code": "036",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Bulgarian Split Squats",
+    "description": "Perform 3 sets of 15 reps per leg.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "037",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Preacher Curls",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "038",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Dumbbell Pullover",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "039",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Single Arm Rows",
+    "description": "Perform 3 sets of 12 reps per arm.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "040",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Side Plank",
+    "description": "Hold for 3 sets of 1 minute per side.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "041",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Leg Extensions",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "042",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Reverse Curls",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "043",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Machine Chest Press",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "044",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Face Pulls",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "045",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Toe Touches",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
+  },
+  {
+    "code": "046",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Glute Bridges",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
+  },
+  {
+    "code": "047",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Cable Tricep Pushdowns",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "048",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Pec Deck Fly",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "049",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Good Mornings",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "050",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Flutter Kicks",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": "6.5"
+  },
+  {
+    "code": "051",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Sumo Squats",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "7"
+  },
+  {
+    "code": "052",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Zottman Curls",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "053",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Dumbbell Squeeze Press",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "054",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Inverted Rows",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "055",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "V-Ups",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
+  },
+  {
+    "code": "056",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Hip Thrusts",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
+  },
+  {
+    "code": "057",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Close Grip Bench Press",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "058",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Landmine Press",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "059",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Reverse Fly",
+    "description": "Perform 3 sets of 12 reps with dumbbells.",
+    "time (minutes)": "6"
+  },
+  {
+    "code": "060",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Windshield Wipers",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": "5.5"
   }
 ]
