@@ -1,48 +1,48 @@
-const calcularIMC = async () => {
-  const altura = document.getElementById('altura').value;
-  const peso = document.getElementById('peso').value;
+const calculateBMI = async () => {
+  const height = document.getElementById('height').value;
+  const weight = document.getElementById('weight').value;
 
-  const imc = peso / ((altura / 100) * (altura / 100));
+  const bmi = weight / ((height / 100) * (height / 100));
 
-  let resultado = '';
-  if (isNaN(imc)) {
-      resultado = 'Por favor, ingrese valores numéricos válidos.';
-  } else if (altura < 0 || peso < 0) {
-      resultado = 'Ni el peso ni la altura pueden ser números negativos.';
-  } else if (peso > 600) {
-      resultado = 'El peso no puede ser mayor a 600kg.';
-  } else if (altura > 251 || altura < 40) {
-      resultado = 'La altura no puede ser mayor a 251cm ni menor a 40cm.';
+  let result = '';
+  if (isNaN(bmi)) {
+      result = 'Please enter valid numeric values.';
+  } else if (height < 0 || weight < 0) {
+      result = 'Neither weight nor height can be negative numbers.';
+  } else if (weight > 600) {
+      result = 'Weight cannot be greater than 600kg.';
+  } else if (height > 251 || height < 40) {
+      result = 'Height cannot be greater than 251cm or less than 40cm.';
   } else {
-      resultado = `Su IMC es: ${imc.toFixed(2)}`;
-      await mostrarPlan(imc); // Call mostrarPlan with the calculated BMI
+      result = `Your BMI is: ${bmi.toFixed(2)}`;
+      await showPlan(bmi); // Call showPlan with the calculated BMI
   }
 
-  document.getElementById('resultado').innerHTML = resultado;
+  document.getElementById('result').innerHTML = result;
 };
 
 document.getElementById('btn-show-plan').addEventListener("click", async () => {
-  document.getElementById('resultado2').style.display = 'flex';
-  const altura = document.getElementById('altura').value;
-  const peso = document.getElementById('peso').value;
-  const imc = peso / ((altura / 100) * (altura / 100));
-  await mostrarPlan(imc);
+  document.getElementById('result2').style.display = 'flex';
+  const height = document.getElementById('height').value;
+  const weight = document.getElementById('weight').value;
+  const bmi = weight / ((height / 100) * (height / 100));
+  await showPlan(bmi);
 });
 
-const mostrarPlan = async (imc) => {
-  let resultado2 = '';
-  if (isNaN(imc)) {
-      resultado2 = 'Por favor, ingrese valores numéricos válidos.';
+const showPlan = async (bmi) => {
+  let result2 = '';
+  if (isNaN(bmi)) {
+      result2 = 'Please enter valid numeric values.';
   } else {
       const workouts = await loadWorkouts();
       const filteredWorkouts = workouts.filter(workout => {
-          if (imc < 18.5) return workout.type === 'strength';
-          if (imc >= 18.5 && imc < 25) return workout.type === 'cardio';
-          if (imc >= 25 && imc < 30) return workout.type === 'strength';
-          if (imc >= 30) return workout.type === 'cardio';
+          if (bmi < 18.5) return workout.type === 'strength';
+          if (bmi >= 18.5 && bmi < 25) return workout.type === 'cardio';
+          if (bmi >= 25 && bmi < 30) return workout.type === 'strength';
+          if (bmi >= 30) return workout.type === 'cardio';
       });
 
-      resultado2 = filteredWorkouts.map(workout => `
+      result2 = filteredWorkouts.map(workout => `
         <div class="workout">
           <h3>${workout.name}</h3>
           <p>${workout.description}</p>
@@ -50,12 +50,12 @@ const mostrarPlan = async (imc) => {
       `).join('');
   }
 
-  document.getElementById('resultado2').innerHTML = resultado2;
+  document.getElementById('result2').innerHTML = result2;
 };
 
-const limitarCaracteres = (elemento, maxLength) => {
-  if (elemento.value.length > maxLength) {
-      elemento.value = elemento.value.slice(0, maxLength);
+const limitCharacters = (element, maxLength) => {
+  if (element.value.length > maxLength) {
+      element.value = element.value.slice(0, maxLength);
   }
 };
 
@@ -64,3 +64,6 @@ const loadWorkouts = async () => {
   const workouts = await response.json();
   return workouts;
 };
+
+// Ensure the calculateBMI function is called when the button is clicked
+document.querySelector('.btn-calculate').addEventListener('click', calculateBMI);
