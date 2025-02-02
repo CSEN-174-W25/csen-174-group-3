@@ -23,6 +23,13 @@
             <label for="height" class="form_label">Height (cm)</label>
             <span class="form_line"></span>
         </div>
+    </div>
+    <div class="cont-calculate">
+        <button onclick="calculateBMI()" class="btn-calculate">Calculate BMI</button>
+        <div id="result"></div>
+    </div>
+
+    <div id="goal-container" class="cont-calculate" style="display: none;">
         <div class="form_group">
             <select id="goal" class="form_input" name="goal">
                 <option value="weight loss">Weight Loss</option>
@@ -32,16 +39,10 @@
             <label for="goal" class="form_label">Fitness Goal</label>
             <span class="form_line"></span>
         </div>
-    </div>
-    <div class="cont-calculate">
-        <button onclick="calculateBMI()" class="btn-calculate">Calculate BMI</button>
-        <div id="result"></div>
+        <button onclick="showPlan()" class="btn-calculate" id="btn-show-plan">Show Plan</button>
     </div>
 
-    <div class="cont-calculate">
-        <button onclick="showPlan()" class="btn-calculate" id="btn-show-plan">Show Plan</button>
-        <div id="result2" class="plan-container" style="display: none; flex-direction: column;"></div>
-    </div>
+    <div id="result2" class="plan-container" style="display: none; flex-direction: column;"></div>
 
 </body>
 <script src="start.js"></script>
