@@ -6,20 +6,20 @@
 }
 
 :root {
-  --buscador: rgb(72, 72, 72);
+  --search: rgb(72, 72, 72);
   --logoBlue: #3c75bf;
-  --letras: #f1f1f1;
-  --fondo: rgb(254, 249, 245);
+  --letters: #f1f1f1;
+  --background: rgb(254, 249, 245);
 }
 
 body {
-  background-color: var(--fondo);
+  background-color: var(--background);
   font-family: "Lato", sans-serif;
 }
 
-.titulo {
+.title {
   width: 100%;
-  color: var(--buscador);
+  color: var(--search);
   text-align: center;
   height: 150px;
   align-content: center;
@@ -27,7 +27,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* inputs de peso y altura */
+/* inputs for weight and height */
 .form_container {
   margin-top: 3em;
   display: flex;
@@ -76,7 +76,7 @@ body {
   transition: transform .5s, color .3s;
 }
 
-.contenedor {
+.container {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -84,45 +84,45 @@ body {
 }
 
 input {
-  background-color: var(--buscador);
-  border: 1px solid var(--buscador);
-  color: var(--letras);
+  background-color: var(--search);
+  border: 1px solid var(--search);
+  color: var(--letters);
   border-radius: 4px;
   padding: 3px;
   outline: none;
 }
 
 select {
-  background-color: var(--buscador);
-  border: 1px solid var(--letras);
-  color: var(--letras);
+  background-color: var(--search);
+  border: 1px solid var(--letters);
+  color: var(--letters);
   border-radius: 4px;
   padding: 3px;
   outline: none;
 }
 
-.cont-calcular {
+.cont-calculate {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
   flex-direction: column;
-  /* color: var(--buscador); */
+  /* color: var(--search); */
 }
 
-.btn-calcular {
+.btn-calculate {
   width: 150px;
   padding: 6px;
   background-color: var(--logoBlue);
   border: 1px solid #000;
   border-radius: 4px;
   margin-bottom: 5px;
-  color: var(--letras);
+  color: var(--letters);
   text-decoration: none;
 }
 
-#resultado2 {
+#result2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +147,7 @@ select {
   margin: 0 auto;
 }
 
-/* Media queries para pantallas pequeñas */
+/* Media queries for small screens */
 @media (max-width: 768px) {
   header nav ul li {
       display: block;
@@ -159,7 +159,7 @@ select {
   }
 }
 
-/* Media queries para pantallas muy pequeñas (móviles) */
+/* Media queries for very small screens (mobile) */
 @media (max-width: 480px) {
   body {
       font-size: 14px;
@@ -174,7 +174,7 @@ select {
   }
 }
 
-/* Flexbox para el header */
+/* Flexbox for the header */
 header {
   display: flex;
   flex-direction: column;
@@ -199,7 +199,7 @@ header nav ul {
   }
 }
 
-/* Usando CSS Grid en el main */
+/* Using CSS Grid in the main */
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
