@@ -1,0 +1,73 @@
+[
+  {
+    "code": "001",
+    "type": "cardio",
+    "muscleGroup": "legs",
+    "name": "Running",
+    "description": "Run at a moderate pace for 30 minutes."
+  },
+  {
+    "code": "002",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Bicep Curls",
+    "description": "Perform 3 sets of 12 reps with dumbbells."
+  },
+  {
+    "code": "003",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Jumping Jacks",
+    "description": "Perform 3 sets of 20 reps."
+  },
+  {
+    "code": "004",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Push-ups",
+    "description": "Perform 3 sets of 15 reps."
+  },
+  {
+    "code": "005",
+    "type": "cardio",
+    "muscleGroup": "legs",
+    "name": "Cycling",
+    "description": "Cycle at a moderate pace for 30 minutes."
+  },
+  
+  {
+    "code": "006",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Pull-ups",
+    "description": "Perform 3 sets of 10 reps."
+  },
+  {
+    "code": "007",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Burpees",
+    "description": "Perform 3 sets of 15 reps."
+  },
+  {
+    "code": "008",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Squats",
+    "description": "Perform 3 sets of 20 reps."
+  },
+  {
+    "code": "009",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Mountain Climbers",
+    "description": "Perform 3 sets of 30 seconds."
+  },
+  {
+    "code": "010",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Plank",
+    "description": "Hold for 3 sets of 1 minute."
+  }
+]
