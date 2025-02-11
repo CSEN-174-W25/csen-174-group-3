@@ -51,9 +51,9 @@ const showPlan = async (bmi, goal) => {
   } else {
       const workouts = await loadWorkouts();
       const filteredWorkouts = workouts.filter(workout => {
-          if (goal === 'weight loss') return workout.type === 'cardio';
+          if (goal === 'weight loss') return workout.type === 'cardio' || workout.means === 'gym aerobics';
           if (goal === 'muscle gain') return workout.type === 'strength';
-          if (goal === 'maintenance') return workout.type === 'cardio' || workout.type === 'strength';
+          if (goal === 'maintenance') return workout.type === 'cardio' || workout.type === 'strength' || workout.means === 'gym aerobics';
       });
 
       result2 = filteredWorkouts.map(workout => `

@@ -808,5 +808,140 @@
     "description": "Perform cardio tone for 30 minutes.",
     "time (minutes)": 30,
     "means": "gym aerobics"
+  },
+  {
+    "code": "061",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Resistance Band Bicep Curls",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "062",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Resistance Band Squats",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "063",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Ab Wheel Rollouts",
+    "description": "Perform 3 sets of 10 reps.",
+    "time (minutes)": 5,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "064",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "TRX Tricep Extensions",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "065",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "TRX Lunges",
+    "description": "Perform 3 sets of 15 reps per leg.",
+    "time (minutes)": 7,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "066",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "TRX Pikes",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "067",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Resistance Band Tricep Extensions",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "068",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Resistance Band Deadlifts",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "069",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Medicine Ball Slams",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 5,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "070",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "TRX Bicep Curls",
+    "description": "Perform 3 sets of 12 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "071",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "TRX Hamstring Curls",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 7,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "072",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Resistance Band Russian Twists",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "073",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Resistance Band Shoulder Press",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "074",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "TRX Squats",
+    "description": "Perform 3 sets of 15 reps.",
+    "time (minutes)": 7,
+    "means": "bodyweight with equipment"
+  },
+  {
+    "code": "075",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "TRX Mountain Climbers",
+    "description": "Perform 3 sets of 20 reps.",
+    "time (minutes)": 6,
+    "means": "bodyweight with equipment"
   }
 ]
