@@ -5,7 +5,7 @@
     "muscleGroup": "legs",
     "name": "Running",
     "description": "Run at a moderate pace for 30 minutes.",
-    "time (minutes)": "30"
+    "time (minutes)": 30
   },
   {
     "code": "002",
@@ -13,7 +13,7 @@
     "muscleGroup": "arms",
     "name": "Bicep Curls",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "003",
@@ -21,7 +21,7 @@
     "muscleGroup": "full body",
     "name": "Jumping Jacks",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "4.5"
+    "time (minutes)": 4.5
   },
   {
     "code": "004",
@@ -29,7 +29,7 @@
     "muscleGroup": "chest",
     "name": "Push-ups",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "005",
@@ -37,7 +37,7 @@
     "muscleGroup": "legs",
     "name": "Cycling",
     "description": "Cycle at a moderate pace for 30 minutes.",
-    "time (minutes)": "30"
+    "time (minutes)": 30
   },
   {
     "code": "006",
@@ -45,7 +45,7 @@
     "muscleGroup": "back",
     "name": "Pull-ups",
     "description": "Perform 3 sets of 10 reps.",
-    "time (minutes)": "5"
+    "time (minutes)": 5
   },
   {
     "code": "007",
@@ -53,7 +53,7 @@
     "muscleGroup": "full body",
     "name": "Burpees",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "008",
@@ -61,7 +61,7 @@
     "muscleGroup": "legs",
     "name": "Squats",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "009",
@@ -69,7 +69,7 @@
     "muscleGroup": "full body",
     "name": "Mountain Climbers",
     "description": "Perform 3 sets of 30 seconds.",
-    "time (minutes)": "4"
+    "time (minutes)": 4
   },
   {
     "code": "010",
@@ -77,7 +77,7 @@
     "muscleGroup": "core",
     "name": "Plank",
     "description": "Hold for 3 sets of 1 minute.",
-    "time (minutes)": "5"
+    "time (minutes)": 5
   },
   {
     "code": "011",
@@ -85,7 +85,7 @@
     "muscleGroup": "legs",
     "name": "Lunges",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "012",
@@ -93,7 +93,7 @@
     "muscleGroup": "arms",
     "name": "Tricep Dips",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "013",
@@ -101,7 +101,7 @@
     "muscleGroup": "chest",
     "name": "Chest Press",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "014",
@@ -109,7 +109,7 @@
     "muscleGroup": "back",
     "name": "Bent Over Rows",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "015",
@@ -117,7 +117,7 @@
     "muscleGroup": "core",
     "name": "Russian Twists",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "016",
@@ -125,7 +125,7 @@
     "muscleGroup": "legs",
     "name": "Leg Press",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "017",
@@ -133,7 +133,7 @@
     "muscleGroup": "arms",
     "name": "Hammer Curls",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "018",
@@ -141,7 +141,7 @@
     "muscleGroup": "chest",
     "name": "Incline Bench Press",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "019",
@@ -149,7 +149,7 @@
     "muscleGroup": "back",
     "name": "Deadlifts",
     "description": "Perform 3 sets of 10 reps.",
-    "time (minutes)": "5"
+    "time (minutes)": 5
   },
   {
     "code": "020",
@@ -157,7 +157,7 @@
     "muscleGroup": "core",
     "name": "Bicycle Crunches",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "021",
@@ -165,7 +165,7 @@
     "muscleGroup": "legs",
     "name": "Calf Raises",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "022",
@@ -173,7 +173,7 @@
     "muscleGroup": "arms",
     "name": "Overhead Tricep Extension",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "023",
@@ -181,7 +181,7 @@
     "muscleGroup": "chest",
     "name": "Chest Fly",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "024",
@@ -189,7 +189,7 @@
     "muscleGroup": "back",
     "name": "Lat Pulldowns",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "025",
@@ -197,7 +197,7 @@
     "muscleGroup": "core",
     "name": "Leg Raises",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "026",
@@ -205,7 +205,7 @@
     "muscleGroup": "legs",
     "name": "Leg Curls",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "027",
@@ -213,7 +213,7 @@
     "muscleGroup": "arms",
     "name": "Concentration Curls",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "028",
@@ -221,7 +221,7 @@
     "muscleGroup": "chest",
     "name": "Decline Bench Press",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "029",
@@ -229,7 +229,7 @@
     "muscleGroup": "back",
     "name": "Seated Rows",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "030",
@@ -237,7 +237,7 @@
     "muscleGroup": "core",
     "name": "Sit-ups",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "031",
@@ -245,7 +245,7 @@
     "muscleGroup": "legs",
     "name": "Step-ups",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "032",
@@ -253,7 +253,7 @@
     "muscleGroup": "arms",
     "name": "Skull Crushers",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "033",
@@ -261,7 +261,7 @@
     "muscleGroup": "chest",
     "name": "Cable Crossovers",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "034",
@@ -269,7 +269,7 @@
     "muscleGroup": "back",
     "name": "T-Bar Rows",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "035",
@@ -277,7 +277,7 @@
     "muscleGroup": "core",
     "name": "Hanging Leg Raises",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "036",
@@ -285,7 +285,7 @@
     "muscleGroup": "legs",
     "name": "Bulgarian Split Squats",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "037",
@@ -293,7 +293,7 @@
     "muscleGroup": "arms",
     "name": "Preacher Curls",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "038",
@@ -301,7 +301,7 @@
     "muscleGroup": "chest",
     "name": "Dumbbell Pullover",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "039",
@@ -309,7 +309,7 @@
     "muscleGroup": "back",
     "name": "Single Arm Rows",
     "description": "Perform 3 sets of 12 reps per arm.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "040",
@@ -317,7 +317,7 @@
     "muscleGroup": "core",
     "name": "Side Plank",
     "description": "Hold for 3 sets of 1 minute per side.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "041",
@@ -325,7 +325,7 @@
     "muscleGroup": "legs",
     "name": "Leg Extensions",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "042",
@@ -333,7 +333,7 @@
     "muscleGroup": "arms",
     "name": "Reverse Curls",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "043",
@@ -341,7 +341,7 @@
     "muscleGroup": "chest",
     "name": "Machine Chest Press",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "044",
@@ -349,7 +349,7 @@
     "muscleGroup": "back",
     "name": "Face Pulls",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "045",
@@ -357,7 +357,7 @@
     "muscleGroup": "core",
     "name": "Toe Touches",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "046",
@@ -365,7 +365,7 @@
     "muscleGroup": "legs",
     "name": "Glute Bridges",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "047",
@@ -373,7 +373,7 @@
     "muscleGroup": "arms",
     "name": "Cable Tricep Pushdowns",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "048",
@@ -381,7 +381,7 @@
     "muscleGroup": "chest",
     "name": "Pec Deck Fly",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "049",
@@ -389,7 +389,7 @@
     "muscleGroup": "back",
     "name": "Good Mornings",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "050",
@@ -397,7 +397,7 @@
     "muscleGroup": "core",
     "name": "Flutter Kicks",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": "6.5"
+    "time (minutes)": 6.5
   },
   {
     "code": "051",
@@ -405,7 +405,7 @@
     "muscleGroup": "legs",
     "name": "Sumo Squats",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "7"
+    "time (minutes)": 7
   },
   {
     "code": "052",
@@ -413,7 +413,7 @@
     "muscleGroup": "arms",
     "name": "Zottman Curls",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "053",
@@ -421,7 +421,7 @@
     "muscleGroup": "chest",
     "name": "Dumbbell Squeeze Press",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "054",
@@ -429,7 +429,7 @@
     "muscleGroup": "back",
     "name": "Inverted Rows",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "055",
@@ -437,7 +437,7 @@
     "muscleGroup": "core",
     "name": "V-Ups",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "056",
@@ -445,7 +445,7 @@
     "muscleGroup": "legs",
     "name": "Hip Thrusts",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   },
   {
     "code": "057",
@@ -453,7 +453,7 @@
     "muscleGroup": "arms",
     "name": "Close Grip Bench Press",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "058",
@@ -461,7 +461,7 @@
     "muscleGroup": "chest",
     "name": "Landmine Press",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "059",
@@ -469,7 +469,7 @@
     "muscleGroup": "back",
     "name": "Reverse Fly",
     "description": "Perform 3 sets of 12 reps with dumbbells.",
-    "time (minutes)": "6"
+    "time (minutes)": 6
   },
   {
     "code": "060",
@@ -477,6 +477,6 @@
     "muscleGroup": "core",
     "name": "Windshield Wipers",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": "5.5"
+    "time (minutes)": 5.5
   }
 ]

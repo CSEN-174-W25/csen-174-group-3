@@ -27,6 +27,42 @@ body {
   margin-bottom: 20px;
 }
 
+.intro-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.intro-container h1 {
+  color: var(--logoBlue);
+  margin-bottom: 20px;
+}
+
+.intro-container p, .intro-container ul {
+  color: var(--search);
+  margin-bottom: 20px;
+}
+
+.intro-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  display: inline-block;
+}
+
+.btn-get-started {
+  padding: 10px 20px;
+  background-color: var(--logoBlue);
+  color: var(--letters);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-get-started:hover {
+  background-color: #2a5a8f;
+}
+
 /* inputs for weight and height */
 .form_container {
   margin-top: 3em;

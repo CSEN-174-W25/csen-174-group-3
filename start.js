@@ -80,5 +80,10 @@ const loadWorkouts = async () => {
   return workouts;
 };
 
+const startApp = () => {
+  document.getElementById('intro-container').style.display = 'none';
+  document.getElementById('main-container').style.display = 'block';
+};
+
 // Ensure the calculateBMI function is called when the button is clicked
 document.querySelector('.btn-calculate').addEventListener('click', calculateBMI);
