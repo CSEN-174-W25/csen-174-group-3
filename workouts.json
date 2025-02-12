@@ -810,7 +810,7 @@
     "means": "gym aerobics"
   },
   {
-    "code": "061",
+    "code": "091",
     "type": "strength",
     "muscleGroup": "arms",
     "name": "Resistance Band Bicep Curls",
@@ -819,7 +819,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "062",
+    "code": "092",
     "type": "strength",
     "muscleGroup": "legs",
     "name": "Resistance Band Squats",
@@ -828,7 +828,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "063",
+    "code": "093",
     "type": "strength",
     "muscleGroup": "core",
     "name": "Ab Wheel Rollouts",
@@ -837,7 +837,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "064",
+    "code": "094",
     "type": "strength",
     "muscleGroup": "arms",
     "name": "TRX Tricep Extensions",
@@ -846,7 +846,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "065",
+    "code": "095",
     "type": "strength",
     "muscleGroup": "legs",
     "name": "TRX Lunges",
@@ -855,7 +855,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "066",
+    "code": "096",
     "type": "strength",
     "muscleGroup": "core",
     "name": "TRX Pikes",
@@ -864,7 +864,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "067",
+    "code": "097",
     "type": "strength",
     "muscleGroup": "arms",
     "name": "Resistance Band Tricep Extensions",
@@ -873,7 +873,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "068",
+    "code": "098",
     "type": "strength",
     "muscleGroup": "legs",
     "name": "Resistance Band Deadlifts",
@@ -882,7 +882,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "069",
+    "code": "099",
     "type": "strength",
     "muscleGroup": "core",
     "name": "Medicine Ball Slams",
@@ -891,7 +891,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "070",
+    "code": "100",
     "type": "strength",
     "muscleGroup": "arms",
     "name": "TRX Bicep Curls",
@@ -900,7 +900,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "071",
+    "code": "101",
     "type": "strength",
     "muscleGroup": "legs",
     "name": "TRX Hamstring Curls",
@@ -909,7 +909,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "072",
+    "code": "102",
     "type": "strength",
     "muscleGroup": "core",
     "name": "Resistance Band Russian Twists",
@@ -918,7 +918,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "073",
+    "code": "103",
     "type": "strength",
     "muscleGroup": "arms",
     "name": "Resistance Band Shoulder Press",
@@ -927,7 +927,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "074",
+    "code": "104",
     "type": "strength",
     "muscleGroup": "legs",
     "name": "TRX Squats",
@@ -936,7 +936,7 @@
     "means": "bodyweight with equipment"
   },
   {
-    "code": "075",
+    "code": "105",
     "type": "strength",
     "muscleGroup": "core",
     "name": "TRX Mountain Climbers",

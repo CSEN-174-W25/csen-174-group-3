@@ -1,14 +1,12 @@
 const calculateBMI = async () => {
-  const height = document.getElementById('height').value;
-  const weight = document.getElementById('weight').value;
+  const height = parseFloat(document.getElementById('height').value);
+  const weight = parseFloat(document.getElementById('weight').value);
 
   const bmi = weight / ((height / 100) * (height / 100));
 
   let result = '';
-  if (isNaN(bmi)) {
+  if (isNaN(bmi) || height <= 0 || weight <= 0) {
       result = 'Please enter valid numeric values.';
-  } else if (height < 0 || weight < 0) {
-      result = 'Neither weight nor height can be negative numbers.';
   } else if (weight > 600) {
       result = 'Weight cannot be greater than 600kg.';
   } else if (height > 251 || height < 40) {
@@ -37,35 +35,68 @@ const getSuggestion = (bmi) => {
 
 document.getElementById('btn-show-plan').addEventListener("click", async () => {
   document.getElementById('result2').style.display = 'flex';
-  const height = document.getElementById('height').value;
-  const weight = document.getElementById('weight').value;
+  const height = parseFloat(document.getElementById('height').value);
+  const weight = parseFloat(document.getElementById('weight').value);
   const goal = document.getElementById('goal').value;
+  const workoutDays = parseInt(document.getElementById('workout-days').value);
+  const workoutDuration = parseInt(document.getElementById('workout-duration').value);
   const bmi = weight / ((height / 100) * (height / 100));
-  await showPlan(bmi, goal);
+
+  if (isNaN(bmi) || isNaN(workoutDays) || isNaN(workoutDuration) || workoutDays <= 0 || workoutDuration <= 0) {
+      document.getElementById('result2').innerHTML = 'Please enter valid numeric values for all fields.';
+      return;
+  }
+
+  console.log('Inputs are valid. Proceeding to show plan...');
+  await showPlan(bmi, goal, workoutDays, workoutDuration);
 });
 
-const showPlan = async (bmi, goal) => {
+const showPlan = async (bmi, goal, workoutDays, workoutDuration) => {
   let result2 = '';
-  if (isNaN(bmi)) {
-      result2 = 'Please enter valid numeric values.';
-  } else {
-      const workouts = await loadWorkouts();
-      const filteredWorkouts = workouts.filter(workout => {
-          if (goal === 'weight loss') return workout.type === 'cardio' || workout.means === 'gym aerobics';
-          if (goal === 'muscle gain') return workout.type === 'strength';
-          if (goal === 'maintenance') return workout.type === 'cardio' || workout.type === 'strength' || workout.means === 'gym aerobics';
-      });
+  const workouts = await loadWorkouts();
+  console.log('Loaded workouts:', workouts);
+  const filteredWorkouts = workouts.filter(workout => {
+      if (goal === 'weight loss') return workout.type === 'cardio' || workout.means === 'gym aerobics';
+      if (goal === 'muscle gain') return workout.type === 'strength';
+      if (goal === 'maintenance') return workout.type === 'cardio' || workout.type === 'strength' || workout.means === 'gym aerobics';
+  });
 
-      result2 = filteredWorkouts.map(workout => `
+  console.log('Filtered workouts:', filteredWorkouts);
+  const workoutPlans = generateWorkoutPlans(filteredWorkouts, workoutDays, workoutDuration);
+  console.log('Generated workout plans:', workoutPlans);
+  result2 = workoutPlans.map((plan, index) => `
+    <div class="workout-plan">
+      <h3>Day ${index + 1}</h3>
+      ${plan.map(workout => `
         <div class="workout">
-          <h3>${workout.name}</h3>
+          <h4>${workout.name}</h4>
           <p>${workout.description}</p>
           <p>Time: ${workout["time (minutes)"]} minutes</p>
         </div>
-      `).join('');
-  }
+      `).join('')}
+    </div>
+  `).join('');
 
   document.getElementById('result2').innerHTML = result2;
+};
+
+const generateWorkoutPlans = (workouts, workoutDays, workoutDuration) => {
+  const plans = [];
+  for (let i = 0; i < workoutDays; i++) {
+      let plan = [];
+      let totalTime = 0;
+      while (totalTime < workoutDuration) {
+          const workout = workouts[Math.floor(Math.random() * workouts.length)];
+          if (totalTime + workout["time (minutes)"] <= workoutDuration) {
+              plan.push(workout);
+              totalTime += workout["time (minutes)"];
+          } else {
+              break;
+          }
+      }
+      plans.push(plan);
+  }
+  return plans;
 };
 
 const limitCharacters = (element, maxLength) => {

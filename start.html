@@ -60,6 +60,16 @@
                 <label for="goal" class="form_label">Fitness Goal</label>
                 <span class="form_line"></span>
             </div>
+            <div class="form_group">
+                <input type="number" id="workout-days" min="1" max="7" class="form_input" name="workout-days" placeholder=" ">
+                <label for="workout-days" class="form_label">Days per Week</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <input type="number" id="workout-duration" min="1" class="form_input" name="workout-duration" placeholder=" ">
+                <label for="workout-duration" class="form_label">Workout Duration (minutes)</label>
+                <span class="form_line"></span>
+            </div>
             <div class="cont-calculate">
                 <button onclick="showPlan()" class="btn-calculate" id="btn-show-plan">Show Plan</button>
             </div>
