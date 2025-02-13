@@ -1,0 +1,15 @@
+
+{
+  "name": "fit-tracker",
+  "version": "1.0.0",
+  "description": "A comprehensive fitness tool designed to make working out more convenient and effective.",
+  "main": "start.js",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -71,11 +71,13 @@ body {
   flex-direction: row;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap; /* Add this line to allow wrapping */
 }
 
 .form_group {
   position: relative;
   --color: #5757577e;
+  margin-bottom: 1.5em; /* Add this line to add spacing between input boxes */
 }
 
 .form_input {
