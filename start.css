@@ -230,6 +230,20 @@ select {
   margin: 20px auto;
 }
 
+.menu-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.exercise-search-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.exercise-results {
+  margin-top: 20px;
+}
+
 /* Media queries for small screens */
 @media (max-width: 768px) {
   header nav ul li {

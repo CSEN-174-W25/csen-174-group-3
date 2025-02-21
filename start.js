@@ -1,4 +1,3 @@
-
 const calculateBMI = async () => {
   const heightFeet = parseFloat(document.getElementById('height-feet').value);
   const heightInches = parseFloat(document.getElementById('height-inches').value);
@@ -62,8 +61,26 @@ document.getElementById('btn-show-plan').addEventListener("click", async () => {
   await showPlan(bmi, goal, workoutDays, workoutDuration);
 });
 
-const showPlan = async (bmi, goal, workoutDays, workoutDuration) => {
-  let result2 = '';
+const showPlan = async () => {
+  document.getElementById('result2').style.display = 'flex';
+  const heightFeet = parseFloat(document.getElementById('height-feet').value);
+  const heightInches = parseFloat(document.getElementById('height-inches').value);
+  const weightPounds = parseFloat(document.getElementById('weight').value);
+  const goal = document.getElementById('goal').value;
+  const workoutDays = parseInt(document.getElementById('workout-days').value);
+  const workoutDuration = parseInt(document.getElementById('workout-duration').value);
+
+  const totalHeightInches = (heightFeet * 12) + heightInches;
+  const heightMeters = totalHeightInches * 0.0254;
+  const weightKg = weightPounds * 0.453592;
+  const bmi = weightKg / (heightMeters * heightMeters);
+
+  if (isNaN(bmi) || isNaN(workoutDays) || isNaN(workoutDuration) || workoutDays <= 0 || workoutDuration <= 0) {
+      document.getElementById('result2').innerHTML = 'Please enter valid numeric values for all fields.';
+      return;
+  }
+
+  console.log('Inputs are valid. Proceeding to show plan...');
   const workouts = await loadWorkouts();
   console.log('Loaded workouts:', workouts);
   const filteredWorkouts = workouts.filter(workout => {
@@ -75,7 +92,7 @@ const showPlan = async (bmi, goal, workoutDays, workoutDuration) => {
   console.log('Filtered workouts:', filteredWorkouts);
   const workoutPlans = generateWorkoutPlans(filteredWorkouts, workoutDays, workoutDuration);
   console.log('Generated workout plans:', workoutPlans);
-  result2 = workoutPlans.map((plan, index) => `
+  let result2 = workoutPlans.map((plan, index) => `
     <div class="workout-plan">
       <h3>Day ${index + 1}</h3>
       ${plan.map(workout => `
@@ -124,7 +141,42 @@ const loadWorkouts = async () => {
 
 const startApp = () => {
   document.getElementById('intro-container').style.display = 'none';
-  document.getElementById('main-container').style.display = 'block';
+  document.getElementById('menu-container').style.display = 'block';
+};
+
+const navigateToMenu = () => {
+  document.getElementById('intro-container').style.display = 'none';
+  document.getElementById('menu-container').style.display = 'block';
+  document.getElementById('workout-plan-container').style.display = 'none';
+  document.getElementById('exercise-search-container').style.display = 'none';
+};
+
+const navigateToWorkoutPlan = () => {
+  document.getElementById('menu-container').style.display = 'none';
+  document.getElementById('workout-plan-container').style.display = 'block';
+  document.getElementById('exercise-search-container').style.display = 'none';
+};
+
+const navigateToExerciseSearch = () => {
+  document.getElementById('menu-container').style.display = 'none';
+  document.getElementById('workout-plan-container').style.display = 'none';
+  document.getElementById('exercise-search-container').style.display = 'block';
+};
+
+const searchExercises = async () => {
+  const muscleGroup = document.getElementById('muscle-group').value;
+  const workouts = await loadWorkouts();
+  const filteredWorkouts = workouts.filter(workout => workout.muscleGroup === muscleGroup);
+
+  let resultHtml = filteredWorkouts.map(workout => `
+    <div class="workout">
+      <h4>${workout.name}</h4>
+      <p>${workout.description}</p>
+      <p>Time: ${workout["time (minutes)"]} minutes</p>
+    </div>
+  `).join('');
+
+  document.getElementById('exercise-results').innerHTML = resultHtml;
 };
 
 // Ensure the calculateBMI function is called when the button is clicked

@@ -28,10 +28,16 @@
             <li>Enabling users to search and explore workouts within the database.</li>
             <li>Offering holistic fitness support, integrating nutrition tips and mental well-being guidance.</li>
         </ul>
-        <button onclick="startApp()" class="btn-get-started">Get Started!</button>
+        <button onclick="navigateToMenu()" class="btn-get-started">Get Started!</button>
     </div>
 
-    <div id="main-container" style="display: none;">
+    <div id="menu-container" class="menu-container" style="display: none;">
+        <h1>Menu</h1>
+        <button onclick="navigateToWorkoutPlan()" class="btn-get-started">Workout Plan Generator</button>
+        <button onclick="navigateToExerciseSearch()" class="btn-get-started">Muscle Group Exercise Search</button>
+    </div>
+
+    <div id="workout-plan-container" style="display: none;">
         <div class="form_container"> 
             <div class="form_group">
                 <input type="number" id="weight" min="0" class="form_input" name="weight" required oninput="limitCharacters(this, 4)" placeholder=" ">
@@ -81,9 +87,31 @@
             </div>
         </div>
 
-        <div id="result2" class="plan-container" style="display: none; flex-direction: column;"></div>
+        <div id="result2" class="plan-container" style="display: none; flex-direction: column;">
+            <button onclick="navigateToExerciseSearch()" class="btn-calculate">Exercise Search</button>
+        </div>
     </div>
 
+    <div id="exercise-search-container" class="exercise-search-container" style="display: none;">
+        <h1>Muscle Group Exercise Search</h1>
+        <div class="form_group">
+            <select id="muscle-group" class="form_input" name="muscle-group">
+                <option value="legs">Legs</option>
+                <option value="arms">Arms</option>
+                <option value="chest">Chest</option>
+                <option value="back">Back</option>
+                <option value="core">Core</option>
+                <option value="full body">Full Body</option>
+            </select>
+            <label for="muscle-group" class="form_label">Select Muscle Group</label>
+            <span class="form_line"></span>
+        </div>
+        <div class="cont-calculate">
+            <button onclick="searchExercises()" class="btn-calculate">Search</button>
+        </div>
+        <div id="exercise-results" class="exercise-results"></div>
+    </div>
+
+    <script src="start.js"></script>
 </body>
-<script src="start.js"></script>
 </html>
