@@ -1,16 +1,22 @@
-const calculateBMI = async () => {
-  const height = parseFloat(document.getElementById('height').value);
-  const weight = parseFloat(document.getElementById('weight').value);
 
-  const bmi = weight / ((height / 100) * (height / 100));
+const calculateBMI = async () => {
+  const heightFeet = parseFloat(document.getElementById('height-feet').value);
+  const heightInches = parseFloat(document.getElementById('height-inches').value);
+  const weightPounds = parseFloat(document.getElementById('weight').value);
+
+  const totalHeightInches = (heightFeet * 12) + heightInches;
+  const heightMeters = totalHeightInches * 0.0254;
+  const weightKg = weightPounds * 0.453592;
+
+  const bmi = weightKg / (heightMeters * heightMeters);
 
   let result = '';
-  if (isNaN(bmi) || height <= 0 || weight <= 0) {
+  if (isNaN(bmi) || totalHeightInches <= 0 || weightPounds <= 0) {
       result = 'Please enter valid numeric values.';
-  } else if (weight > 600) {
-      result = 'Weight cannot be greater than 600kg.';
-  } else if (height > 251 || height < 40) {
-      result = 'Height cannot be greater than 251cm or less than 40cm.';
+  } else if (weightPounds > 1323) {
+      result = 'Weight cannot be greater than 1323 pounds.';
+  } else if (totalHeightInches > 99 || totalHeightInches < 16) {
+      result = 'Height cannot be greater than 99 inches or less than 16 inches.';
   } else {
       result = `Your BMI is: ${bmi.toFixed(2)}`;
       const suggestion = getSuggestion(bmi);
@@ -23,24 +29,29 @@ const calculateBMI = async () => {
 
 const getSuggestion = (bmi) => {
   if (bmi < 18.5) {
-      return "Based on your BMI results, we at Fit Tracker recommend you to focus on muscle gain exercises because you are underweight. These types of exercises will help you build muscle mass.";
+      return "Great news! Your BMI results suggest that focusing on muscle-building exercises could be a great way to strengthen your body and boost your overall fitness. Let’s work on building muscle mass with a plan that fits your goals!";
   } else if (bmi >= 18.5 && bmi < 25) {
-      return "Based on your BMI results, we at Fit Tracker recommend you to maintain your current fitness level with a mix of cardio and strength exercises because you have a normal weight.";
+      return "You're on the right track! Your BMI results indicate that maintaining your current fitness level with a balanced mix of cardio and strength exercises is a great way to stay healthy and strong. Keep up the great work!";
   } else if (bmi >= 25 && bmi < 30) {
-      return "Based on your BMI results, we at Fit Tracker recommend you to focus on weight loss exercises because you are overweight. These types of exercises will help you reduce body fat.";
+      return "Let’s reach your goals together! Your BMI results suggest that incorporating weight-loss-focused exercises can help you enhance your fitness and energy levels. A mix of cardio and strength training can be a great way to feel your best!";
   } else {
-      return "Based on your BMI results, we at Fit Tracker recommend you to focus on weight loss exercises because you are obese. These types of exercises will help you reduce body fat.";
+      return "You’re taking an important step toward a healthier you! Your BMI results indicate that focusing on exercises that support weight loss could help improve your overall well-being. A personalized fitness plan with fun and effective workouts will set you up for success!";
   }
 };
 
 document.getElementById('btn-show-plan').addEventListener("click", async () => {
   document.getElementById('result2').style.display = 'flex';
-  const height = parseFloat(document.getElementById('height').value);
-  const weight = parseFloat(document.getElementById('weight').value);
+  const heightFeet = parseFloat(document.getElementById('height-feet').value);
+  const heightInches = parseFloat(document.getElementById('height-inches').value);
+  const weightPounds = parseFloat(document.getElementById('weight').value);
   const goal = document.getElementById('goal').value;
   const workoutDays = parseInt(document.getElementById('workout-days').value);
   const workoutDuration = parseInt(document.getElementById('workout-duration').value);
-  const bmi = weight / ((height / 100) * (height / 100));
+
+  const totalHeightInches = (heightFeet * 12) + heightInches;
+  const heightMeters = totalHeightInches * 0.0254;
+  const weightKg = weightPounds * 0.453592;
+  const bmi = weightKg / (heightMeters * heightMeters);
 
   if (isNaN(bmi) || isNaN(workoutDays) || isNaN(workoutDuration) || workoutDays <= 0 || workoutDuration <= 0) {
       document.getElementById('result2').innerHTML = 'Please enter valid numeric values for all fields.';

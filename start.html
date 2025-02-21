@@ -34,14 +34,20 @@
     <div id="main-container" style="display: none;">
         <div class="form_container"> 
             <div class="form_group">
-                <input type="number" id="weight" min="0" class="form_input" name="weight" required oninput="limitCharacters(this, 3)" placeholder=" ">
-                <label for="weight" class="form_label">Weight (kg)</label>
+                <input type="number" id="weight" min="0" class="form_input" name="weight" required oninput="limitCharacters(this, 4)" placeholder=" ">
+                <label for="weight" class="form_label">Weight (lbs)</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
                 <i class="icon fa-solid fa-eye" id="eye"></i>
-                <input type="number" min="0" id="height" class="form_input" name="height" oninput="limitCharacters(this, 3)" placeholder=" ">
-                <label for="height" class="form_label">Height (cm)</label>
+                <input type="number" min="0" id="height-feet" class="form_input" name="height-feet" oninput="limitCharacters(this, 2)" placeholder=" ">
+                <label for="height-feet" class="form_label">Height (feet)</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <i class="icon fa-solid fa-eye" id="eye"></i>
+                <input type="number" min="0" id="height-inches" class="form_input" name="height-inches" oninput="limitCharacters(this, 2)" placeholder=" ">
+                <label for="height-inches" class="form_label">Height (inches)</label>
                 <span class="form_line"></span>
             </div>
         </div>

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: 'Roboto', sans-serif; /* Set the font for all elements */
 }
 
 :root {
@@ -14,7 +15,7 @@
 
 body {
   background-color: var(--background);
-  font-family: "Lato", sans-serif;
+  font-family: 'Roboto', sans-serif; /* Ensure body uses the same font */
 }
 
 .title {
@@ -169,6 +170,17 @@ select {
   width: 70%;
 }
 
+.workout-plan {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--letters);
+  border: 1px solid var(--search);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
 .workout {
   background-color: var(--letters);
   color: var(--search);
@@ -176,8 +188,9 @@ select {
   border-radius: 4px;
   padding: 10px;
   margin: 10px 0;
-  width: 80%;
+  width: 100%;
   text-align: left;
+  box-sizing: border-box;
 }
 
 #goal-container {
@@ -191,10 +204,19 @@ select {
 #goal-container .form_group {
   width: 50%;
   max-width: 300px;
+  margin-bottom: 30px; /* Increase spacing */
+}
+
+#goal-container .form_group input[name="workout-duration"] {
+  width: 100%; /* Ensure the workout duration input box is wide enough */
+}
+
+#goal-container .form_label {
+  white-space: nowrap; /* Ensure the label text stays on one line */
 }
 
 #goal-container .cont-calculate {
-  margin-top: 10px;
+  margin-top: 30px; /* Increase spacing */
 }
 
 .result-box {
