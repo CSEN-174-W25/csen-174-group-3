@@ -235,13 +235,52 @@ select {
   padding: 20px;
 }
 
+.menu-container button {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  padding: 10px;
+  background-color: var(--logoBlue);
+  color: var(--letters);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu-container button:hover {
+  background-color: #2a5a8f;
+}
+
+.go-back-button {
+  position: absolute;
+  top: 160px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: var(--logoBlue);
+  color: var(--letters);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.go-back-button:hover {
+  background-color: #2a5a8f;
+}
+
 .exercise-search-container {
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
 }
 
-.exercise-results {
-  margin-top: 20px;
+.exercise-search-container h1 {
+  margin-bottom: 20px;
 }
 
 /* Media queries for small screens */
