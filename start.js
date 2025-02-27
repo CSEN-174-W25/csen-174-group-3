@@ -1,110 +1,13 @@
-class User {
-  constructor(height, weight, goal, workoutDuration, workoutDays) {
-    this._height = height;
-    this._weight = weight;
-    this._bmi = this.calcBMI();
-    this.goal = goal;
-    this.workoutDuration = workoutDuration;
-    this.workoutDays = workoutDays;
-  }
-
-  set height(height) {
-    this._height = height;
-    this._bmi = this.calcBMI();
-  }
-
-  set weight(weight) {
-    this._weight = weight;
-    this._bmi = this.calcBMI();
-  }
-
-  set bmi(bmi) {
-    this._bmi = bmi;
-  }
-
-  get height() {
-    return this._height;
-  }
-
-  get weight() {
-    return this._weight;
-  }
-
-  get bmi() {
-    return this._bmi;
-  }
-
-  calcBMI() {
-    return this._weight / (this._height * this._height);
-  }
-
-  getSuggestion() {
-    if (this._bmi < 18.5) {
-      return "Underweight: Recommend you to focus on muscle gain exercises. These types of exercises will help you build muscle mass.";
-    } else if (this._bmi >= 18.5 && this._bmi < 25) {
-      return "Baseline: Recommend you to maintain your current fitness level with a mix of cardio and strength exercises.";
-    } else if (this._bmi >= 25 && this._bmi < 30) {
-      return "Overweight: Recommend you to focus on weight loss exercises. These types of exercises will help you reduce body fat.";
-    } else {
-      return "Obese: Recommend you to focus on weight loss exercises. These types of exercises will help you reduce body fat.";
-    }
-  }
-}
-
-class WorkoutList {
-  constructor() {
-    this.workouts = [];
-  }
-
-  async load() {
-    const response = await fetch("workouts.json");
-    this.workouts = await response.json();
-  }
-
-  filterGoals(goal) {
-    return this.workouts.filter((workout) => {
-      if (goal === "weight loss")
-        return workout.type === "cardio" || workout.means === "gym aerobics";
-      if (goal === "muscle gain") return workout.type === "strength";
-      if (goal === "maintenance")
-        return (
-          workout.type === "cardio" ||
-          workout.type === "strength" ||
-          workout.means === "gym aerobics"
-        );
-    });
-  }
-
-  filterTags(filters) {
-    return this.workouts.filter((workout) => {
-      return Object.keys(filters).every(key => workout[key] === filters[key]);
-    });
-  }
-
-  generate(goal, workoutDuration, workoutDays) {
-    let filteredWorkouts = this.filterGoals(goal);
-    const plans = [];
-    for (let i = 0; i < workoutDays; i++) {
-      let plan = [];
-      let totalTime = 0;
-      while (totalTime < workoutDuration && filteredWorkouts.length > 0) {
-        const workout =
-          filteredWorkouts[Math.floor(Math.random() * filteredWorkouts.length)];
-        if (totalTime + workout["time (minutes)"] <= workoutDuration) {
-          plan.push(workout);
-          totalTime += workout["time (minutes)"];
-        } else {
-          break;
-        }
-      }
-      plans.push(plan);
-    }
-    return plans;
-  }
-}
+import { User } from "./user.js";
+import { WorkoutList } from "./workouts.js";
 
 let userInstance = new User();
 let workouts = new WorkoutList();
+
+window.startApp = async () => {
+  await workouts.load();
+  navigateToMenu();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const btnNavPlan = document.getElementById("btn-nav-plan");
@@ -139,11 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error(".btn-nav-back not found in the DOM.");
   }
 });
-
-const startApp = async () => {
-  await workouts.load();
-  navigateToMenu();
-}
 
 const navigateToMenu = async () => {
   document.getElementById("intro-container").style.display = "none";
