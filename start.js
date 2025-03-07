@@ -166,45 +166,11 @@ function showResult(message, isError = false) {
 }
 
 async function generateWorkoutPlan() {
-    const goal = document.getElementById("goal").value;
-    const daysPerWeek = parseInt(document.getElementById("days-per-week").value);
-    const timePerSession = parseInt(document.getElementById("time-per-session").value);
-
-    if (isNaN(daysPerWeek) || isNaN(timePerSession)) {
-        showResult("Please fill all fields with valid numbers", true);
-        return;
-    }
-
-    try {
-        const workouts = await FitnessManager.loadWorkouts();
-        const plan = FitnessManager.generatePlan(workouts, goal, daysPerWeek, timePerSession);
-        displayWorkoutPlan(plan);
-        navigateToWorkoutPlan();
-    } catch (error) {
-        showResult(`Error: ${error.message}`, true);
-    }
+    // Function content removed
 }
 
 function displayWorkoutPlan(plan) {
-    const container = document.getElementById("workout-plan-result");
-    container.innerHTML = plan.map((day, index) => `
-        <div class="day-plan">
-            <h3>Day ${index + 1}</h3>
-            <div class="results-grid">
-                ${day.map(ex => `
-                    <div class="exercise-card">
-                        <h3>${ex.name}</h3>
-                        <p>${ex.description}</p>
-                        <div class="exercise-meta">
-                            <span>Type: ${ex.type}</span>
-                            <span>Duration: ${ex["time (minutes)"]} mins</span>
-                            <span>Difficulty: ${ex.difficulty}</span>
-                        </div>
-                    </div>
-                `).join("")}
-            </div>
-        </div>
-    `).join("");
+    // Function content removed
 }
 
 // Initialize App
