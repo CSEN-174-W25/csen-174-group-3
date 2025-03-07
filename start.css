@@ -212,9 +212,7 @@ body {
 
 .goal-selector,
 .experience-level-selector,
-.workout-preferences-selector,
-.days-per-week-selector,
-.time-per-session-selector {
+.workout-preferences-selector {
   margin-top: 2rem;
 }
 
