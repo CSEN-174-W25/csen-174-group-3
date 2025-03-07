@@ -47,14 +47,15 @@ class FitnessManager {
         return weightKg / (heightMeters ** 2);
     }
 
-    static generatePlan(workouts, goal, daysPerWeek, timePerSession) {
-        let filteredWorkouts;
-        if (goal === "weight-loss") {
-            filteredWorkouts = workouts.filter(w => w.type === "cardio");
-        } else if (goal === "muscle-gain") {
-            filteredWorkouts = workouts.filter(w => w.type === "strength");
-        } else {
-            filteredWorkouts = workouts;
+     static generatePlan(workouts, goal, experienceLevel, workoutPreferences, daysPerWeek, timePerSession) {
+        let filteredWorkouts = workouts.filter(w => 
+            w.fitness_goals.includes(goal) &&
+            w.experience_level.includes(experienceLevel) &&
+            w.workout_preferences.includes(workoutPreferences)
+        );
+
+        if (filteredWorkouts.length === 0) {
+            throw new Error("No workouts found matching your criteria. Please adjust your preferences.");
         }
 
         return Array.from({ length: daysPerWeek }, () => {
@@ -62,7 +63,8 @@ class FitnessManager {
             let totalTime = 0;
             while (totalTime < timePerSession) {
                 const workout = filteredWorkouts[Math.floor(Math.random() * filteredWorkouts.length)];
-                const workoutTime = workout["time (minutes)"];
+                if (!workout) break; // Exit if no workout is found
+                const workoutTime = workout.time_minutes;
                 if (totalTime + workoutTime <= timePerSession) {
                     dayPlan.push(workout);
                     totalTime += workoutTime;
@@ -71,6 +73,7 @@ class FitnessManager {
             return dayPlan;
         });
     }
+
 
     static filterExercises(workouts, muscleGroup) {
         return workouts.filter(w => w.muscleGroup === muscleGroup);
@@ -153,6 +156,70 @@ async function searchExercises() {
     }
 }
 
+async function filterExercisesByGoal() {
+    const fitnessGoal = document.getElementById("fitness-goal").value.toLowerCase().replace(" ", "_");
+    try {
+        const workouts = await FitnessManager.loadWorkouts();
+        console.log("Loaded workouts:", workouts); // Debugging line
+        const results = workouts.filter(w => w.fitness_goals.includes(fitnessGoal));
+        console.log("Filtered results:", results); // Debugging line
+        displayExercisesByGoal(results);
+    } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+    }
+}
+
+async function filterExercisesByGoalAndExperience() {
+    const fitnessGoal = document.getElementById("fitness-goal").value.toLowerCase().replace(" ", "_");
+    const experienceLevel = document.getElementById("experience-level").value.toLowerCase();
+    try {
+        const workouts = await FitnessManager.loadWorkouts();
+        console.log("Loaded workouts:", workouts); // Debugging line
+        const results = workouts.filter(w => 
+            w.fitness_goals.includes(fitnessGoal) && 
+            w.experience_level.includes(experienceLevel)
+        );
+        console.log("Filtered results:", results); // Debugging line
+        displayExercisesByGoal(results);
+    } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+    }
+}
+
+async function filterExercisesByGoalExperienceAndPreferences() {
+    const fitnessGoal = document.getElementById("fitness-goal").value.toLowerCase().replace(" ", "_");
+    const experienceLevel = document.getElementById("experience-level").value.toLowerCase();
+    const workoutPreferences = document.getElementById("workout-preferences").value.toLowerCase();
+    try {
+        const workouts = await FitnessManager.loadWorkouts();
+        console.log("Loaded workouts:", workouts); // Debugging line
+        const results = workouts.filter(w => 
+            w.fitness_goals.includes(fitnessGoal) && 
+            w.experience_level.includes(experienceLevel) &&
+            w.workout_preferences.includes(workoutPreferences)
+        );
+        console.log("Filtered results:", results); // Debugging line
+        displayExercisesByGoal(results);
+    } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+    }
+}
+
+function displayExercisesByGoal(exercises) {
+    const container = document.getElementById("goal-exercise-results");
+    container.innerHTML = exercises.map(ex => `
+        <div class="exercise-card">
+            <h3>${ex.name}</h3>
+            <p>${ex.description}</p>
+            <div class="exercise-meta">
+                <span>Type: ${ex.type}</span>
+                <span>Duration: ${ex.time_minutes} mins</span>
+                <span>Difficulty: ${ex.experience_level.join(", ")}</span>
+            </div>
+        </div>
+    `).join("");
+}
+
 function displayExercises(exercises) {
     const container = document.getElementById("exercise-results");
     container.innerHTML = exercises.map(ex => `
@@ -161,8 +228,8 @@ function displayExercises(exercises) {
             <p>${ex.description}</p>
             <div class="exercise-meta">
                 <span>Type: ${ex.type}</span>
-                <span>Duration: ${ex["time (minutes)"]} mins</span>
-                <span>Difficulty: ${ex.difficulty}</span>
+                <span>Duration: ${ex.time_minutes} mins</span>
+                <span>Difficulty: ${ex.experience_level.join(", ")}</span>
             </div>
         </div>
     `).join("");
@@ -176,11 +243,55 @@ function showResult(message, isError = false) {
 }
 
 async function generateWorkoutPlan() {
-    // Function content removed
+    const goal = document.getElementById("fitness-goal").value;
+    const experienceLevel = document.getElementById("experience-level").value;
+    const workoutPreferences = document.getElementById("workout-preferences").value;
+    const daysPerWeek = parseInt(document.getElementById("days-per-week").value);
+    const timePerSession = parseInt(document.getElementById("time-per-session").value);
+
+    if ([goal, experienceLevel, workoutPreferences].some(v => !v) || isNaN(daysPerWeek) || isNaN(timePerSession) || daysPerWeek <= 0 || timePerSession <= 0) {
+        showResult("Please fill all fields with valid values", true);
+        return;
+    }
+
+    try {
+        const workouts = await FitnessManager.loadWorkouts();
+        const plan = FitnessManager.generatePlan(workouts, goal, experienceLevel, workoutPreferences, daysPerWeek, timePerSession);
+        if (plan.length === 0) {
+            showResult("No workouts found for the selected criteria", true);
+            return;
+        }
+        displayWorkoutPlan(plan);
+    } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+    }
 }
 
 function displayWorkoutPlan(plan) {
-    // Function content removed
+    const container = document.getElementById("workout-plan-container");
+    let workoutPlanHTML = '<div class="results-grid">';
+
+    plan.forEach((day, index) => {
+        workoutPlanHTML += `
+            <div class="day-plan">
+                <h3>Day ${index + 1}</h3>
+                ${day.map(ex => `
+                    <div class="exercise-card">
+                        <h3>${ex.name}</h3>
+                        <p>${ex.description}</p>
+                        <div class="exercise-meta">
+                            <span>Type: ${ex.type}</span>
+                            <span>Duration: ${ex.time_minutes} mins</span>
+                            <span>Difficulty: ${ex.experience_level.join(", ")}</span>
+                        </div>
+                    </div>
+                `).join("")}
+            </div>
+        `;
+    });
+
+    workoutPlanHTML += '</div>';
+    container.innerHTML = workoutPlanHTML;
 }
 
 // Initialize App
