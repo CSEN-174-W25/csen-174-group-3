@@ -47,18 +47,21 @@ class FitnessManager {
         return weightKg / (heightMeters ** 2);
     }
 
-     static generatePlan(workouts, goal, experienceLevel, workoutPreferences, daysPerWeek, timePerSession) {
+    static generatePlan(workouts, goal, experienceLevel, workoutPreferences, daysPerWeek, timePerSession) {
         let filteredWorkouts = workouts.filter(w => 
             w.fitness_goals.includes(goal) &&
             w.experience_level.includes(experienceLevel) &&
             w.workout_preferences.includes(workoutPreferences)
         );
 
+        console.log("Filtered workouts:", filteredWorkouts); // Debugging line
+
         if (filteredWorkouts.length === 0) {
             throw new Error("No workouts found matching your criteria. Please adjust your preferences.");
         }
 
-        return Array.from({ length: daysPerWeek }, () => {
+        let plan = [];
+        for (let i = 0; i < daysPerWeek; i++) {
             let dayPlan = [];
             let totalTime = 0;
             while (totalTime < timePerSession) {
@@ -68,12 +71,14 @@ class FitnessManager {
                 if (totalTime + workoutTime <= timePerSession) {
                     dayPlan.push(workout);
                     totalTime += workoutTime;
+                } else {
+                    break;
                 }
             }
-            return dayPlan;
-        });
+            plan.push(dayPlan);
+        }
+        return plan;
     }
-
 
     static filterExercises(workouts, muscleGroup) {
         return workouts.filter(w => w.muscleGroup === muscleGroup);
@@ -207,6 +212,7 @@ async function filterExercisesByGoalExperienceAndPreferences() {
 
 function displayExercisesByGoal(exercises) {
     const container = document.getElementById("goal-exercise-results");
+    console.log("Displaying exercises:", exercises); // Debugging line
     container.innerHTML = exercises.map(ex => `
         <div class="exercise-card">
             <h3>${ex.name}</h3>
@@ -222,6 +228,7 @@ function displayExercisesByGoal(exercises) {
 
 function displayExercises(exercises) {
     const container = document.getElementById("exercise-results");
+    console.log("Displaying exercises:", exercises); // Debugging line
     container.innerHTML = exercises.map(ex => `
         <div class="exercise-card">
             <h3>${ex.name}</h3>
@@ -256,7 +263,9 @@ async function generateWorkoutPlan() {
 
     try {
         const workouts = await FitnessManager.loadWorkouts();
+        console.log("Loaded workouts:", workouts); // Debugging line
         const plan = FitnessManager.generatePlan(workouts, goal, experienceLevel, workoutPreferences, daysPerWeek, timePerSession);
+        console.log("Generated plan:", plan); // Debugging line
         if (plan.length === 0) {
             showResult("No workouts found for the selected criteria", true);
             return;
@@ -268,8 +277,9 @@ async function generateWorkoutPlan() {
 }
 
 function displayWorkoutPlan(plan) {
-    const container = document.getElementById("workout-plan-container");
+    const container = document.getElementById("goal-exercise-results");
     let workoutPlanHTML = '<div class="results-grid">';
+    console.log("Displaying workout plan:", plan); // Debugging line
 
     plan.forEach((day, index) => {
         workoutPlanHTML += `
@@ -292,6 +302,7 @@ function displayWorkoutPlan(plan) {
 
     workoutPlanHTML += '</div>';
     container.innerHTML = workoutPlanHTML;
+    console.log("Workout plan HTML:", workoutPlanHTML); // Debugging line
 }
 
 // Initialize App

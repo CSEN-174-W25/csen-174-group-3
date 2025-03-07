@@ -94,7 +94,21 @@
                     <option value="outdoor">Outdoor</option>
                 </select>
             </div>
-            <button onclick="filterExercisesByGoalExperienceAndPreferences()" class="btn-main">Generate Workout Plan</button>
+            <!-- Message Box -->
+            <div class="message-box">
+                Awesome! You've set your workout goal, experience level, and preferences. Now, let's get pumped! Think about your free time and how long each workout session will last. How many times a week can you commit to crushing your workouts? Let's make every session count and transform your fitness journey!
+            </div>
+            <!-- Days Per Week Input -->
+            <div class="input-group">
+                <label for="days-per-week">Days per week you can work out (1-7):</label>
+                <input type="number" id="days-per-week" class="form-input" min="1" max="7">
+            </div>
+            <!-- Time Per Session Input -->
+            <div class="input-group">
+                <label for="time-per-session">Time per session (in minutes):</label>
+                <input type="number" id="time-per-session" class="form-input" min="1">
+            </div>
+            <button onclick="generateWorkoutPlan()" class="btn-main">Generate Workout Plan</button>
             <div id="goal-exercise-results" class="results-grid"></div>
         </div>
 
