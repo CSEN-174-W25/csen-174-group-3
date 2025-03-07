@@ -5,8 +5,11 @@
     "muscleGroup": "legs",
     "name": "Running",
     "description": "Run at a moderate pace for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "outdoor",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "002",
@@ -14,8 +17,11 @@
     "muscleGroup": "arms",
     "name": "Bicep Curls",
     "description": "Perform 4 sets of 8 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "003",
@@ -23,8 +29,11 @@
     "muscleGroup": "full body",
     "name": "Jumping Jacks",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 4.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 4.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate"],
+    "fitness_goals": ["fat_loss", "endurance", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "004",
@@ -32,8 +41,11 @@
     "muscleGroup": "chest",
     "name": "Push-ups",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "005",
@@ -41,8 +53,11 @@
     "muscleGroup": "legs",
     "name": "Cycling",
     "description": "Cycle at a moderate pace for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "006",
@@ -50,8 +65,11 @@
     "muscleGroup": "back",
     "name": "Pull-ups",
     "description": "Perform 3 sets of 10 reps.",
-    "time (minutes)": 5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "007",
@@ -59,8 +77,11 @@
     "muscleGroup": "full body",
     "name": "Burpees",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "008",
@@ -68,8 +89,11 @@
     "muscleGroup": "legs",
     "name": "Squats",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 7,
-    "means": "gym strength"
+    "time_minutes": 7,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "009",
@@ -77,8 +101,11 @@
     "muscleGroup": "full body",
     "name": "Mountain Climbers",
     "description": "Perform 3 sets of 30 seconds.",
-    "time (minutes)": 4,
-    "means": "bodyweight no equipment"
+    "time_minutes": 4,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "010",
@@ -86,8 +113,11 @@
     "muscleGroup": "core",
     "name": "Plank",
     "description": "Hold for 3 sets of 1 minute.",
-    "time (minutes)": 5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "011",
@@ -95,8 +125,11 @@
     "muscleGroup": "legs",
     "name": "Lunges",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": 7,
-    "means": "bodyweight no equipment"
+    "time_minutes": 7,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "012",
@@ -104,8 +137,11 @@
     "muscleGroup": "arms",
     "name": "Tricep Dips",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "013",
@@ -113,8 +149,11 @@
     "muscleGroup": "chest",
     "name": "Chest Press",
     "description": "Perform 4 sets of 10 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "014",
@@ -122,8 +161,11 @@
     "muscleGroup": "back",
     "name": "Bent Over Rows",
     "description": "Perform 4 sets of 8 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "015",
@@ -131,8 +173,11 @@
     "muscleGroup": "core",
     "name": "Russian Twists",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 6.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "016",
@@ -140,8 +185,11 @@
     "muscleGroup": "legs",
     "name": "Leg Press",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 7,
-    "means": "gym strength"
+    "time_minutes": 7,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "017",
@@ -149,8 +197,11 @@
     "muscleGroup": "arms",
     "name": "Hammer Curls",
     "description": "Perform 4 sets of 10 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "018",
@@ -158,8 +209,11 @@
     "muscleGroup": "chest",
     "name": "Incline Bench Press",
     "description": "Perform 4 sets of 8 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "019",
@@ -167,8 +221,11 @@
     "muscleGroup": "back",
     "name": "Deadlifts",
     "description": "Perform 4 sets of 6 reps.",
-    "time (minutes)": 7,
-    "means": "gym strength"
+    "time_minutes": 7,
+    "means": "gym strength",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "020",
@@ -176,8 +233,11 @@
     "muscleGroup": "core",
     "name": "Bicycle Crunches",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 6.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "021",
@@ -185,8 +245,11 @@
     "muscleGroup": "legs",
     "name": "Calf Raises",
     "description": "Perform 4 sets of 15 reps.",
-    "time (minutes)": 7,
-    "means": "gym strength"
+    "time_minutes": 7,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "022",
@@ -194,8 +257,11 @@
     "muscleGroup": "arms",
     "name": "Overhead Tricep Extension",
     "description": "Perform 4 sets of 10 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "023",
@@ -203,8 +269,11 @@
     "muscleGroup": "chest",
     "name": "Chest Fly",
     "description": "Perform 4 sets of 12 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "024",
@@ -212,8 +281,11 @@
     "muscleGroup": "back",
     "name": "Lat Pulldowns",
     "description": "Perform 4 sets of 10 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "025",
@@ -221,8 +293,11 @@
     "muscleGroup": "core",
     "name": "Leg Raises",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "026",
@@ -230,8 +305,11 @@
     "muscleGroup": "legs",
     "name": "Leg Curls",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 7,
-    "means": "gym strength"
+    "time_minutes": 7,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "027",
@@ -239,8 +317,11 @@
     "muscleGroup": "arms",
     "name": "Concentration Curls",
     "description": "Perform 4 sets of 8 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "028",
@@ -248,8 +329,11 @@
     "muscleGroup": "chest",
     "name": "Decline Bench Press",
     "description": "Perform 4 sets of 10 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "029",
@@ -257,8 +341,11 @@
     "muscleGroup": "back",
     "name": "Seated Rows",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "030",
@@ -266,8 +353,11 @@
     "muscleGroup": "core",
     "name": "Sit-ups",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 6.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "031",
@@ -275,8 +365,11 @@
     "muscleGroup": "legs",
     "name": "Step-ups",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": 7,
-    "means": "bodyweight with equipment"
+    "time_minutes": 7,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "032",
@@ -284,8 +377,11 @@
     "muscleGroup": "arms",
     "name": "Skull Crushers",
     "description": "Perform 4 sets of 8 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "033",
@@ -293,8 +389,11 @@
     "muscleGroup": "chest",
     "name": "Cable Crossovers",
     "description": "Perform 4 sets of 10 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "034",
@@ -302,8 +401,11 @@
     "muscleGroup": "back",
     "name": "T-Bar Rows",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "035",
@@ -311,8 +413,11 @@
     "muscleGroup": "core",
     "name": "Hanging Leg Raises",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight with equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight with equipment",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "036",
@@ -320,8 +425,11 @@
     "muscleGroup": "legs",
     "name": "Bulgarian Split Squats",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": 7,
-    "means": "bodyweight with equipment"
+    "time_minutes": 7,
+    "means": "bodyweight with equipment",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "037",
@@ -329,8 +437,11 @@
     "muscleGroup": "arms",
     "name": "Preacher Curls",
     "description": "Perform 4 sets of 10 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "038",
@@ -338,8 +449,11 @@
     "muscleGroup": "chest",
     "name": "Dumbbell Pullover",
     "description": "Perform 4 sets of 8 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "039",
@@ -347,8 +461,11 @@
     "muscleGroup": "back",
     "name": "Single Arm Rows",
     "description": "Perform 4 sets of 10 reps per arm.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "040",
@@ -356,8 +473,11 @@
     "muscleGroup": "core",
     "name": "Side Plank",
     "description": "Hold for 3 sets of 1 minute per side.",
-    "time (minutes)": 7,
-    "means": "bodyweight no equipment"
+    "time_minutes": 7,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "041",
@@ -365,8 +485,11 @@
     "muscleGroup": "legs",
     "name": "Leg Extensions",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "042",
@@ -374,8 +497,11 @@
     "muscleGroup": "arms",
     "name": "Reverse Curls",
     "description": "Perform 4 sets of 10 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "043",
@@ -383,8 +509,11 @@
     "muscleGroup": "chest",
     "name": "Machine Chest Press",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "044",
@@ -392,8 +521,11 @@
     "muscleGroup": "back",
     "name": "Face Pulls",
     "description": "Perform 4 sets of 10 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "045",
@@ -401,8 +533,11 @@
     "muscleGroup": "core",
     "name": "Toe Touches",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 6.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "046",
@@ -410,8 +545,11 @@
     "muscleGroup": "legs",
     "name": "Glute Bridges",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "047",
@@ -419,8 +557,11 @@
     "muscleGroup": "arms",
     "name": "Cable Tricep Pushdowns",
     "description": "Perform 4 sets of 8 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "048",
@@ -428,8 +569,11 @@
     "muscleGroup": "chest",
     "name": "Pec Deck Fly",
     "description": "Perform 4 sets of 10 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "049",
@@ -437,8 +581,11 @@
     "muscleGroup": "back",
     "name": "Good Mornings",
     "description": "Perform 4 sets of 12 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "050",
@@ -446,8 +593,11 @@
     "muscleGroup": "core",
     "name": "Flutter Kicks",
     "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 6.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "051",
@@ -455,8 +605,11 @@
     "muscleGroup": "legs",
     "name": "Sumo Squats",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 7,
-    "means": "bodyweight no equipment"
+    "time_minutes": 7,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "052",
@@ -464,8 +617,11 @@
     "muscleGroup": "arms",
     "name": "Zottman Curls",
     "description": "Perform 4 sets of 8 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "053",
@@ -473,8 +629,11 @@
     "muscleGroup": "chest",
     "name": "Dumbbell Squeeze Press",
     "description": "Perform 4 sets of 10 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "054",
@@ -482,8 +641,11 @@
     "muscleGroup": "back",
     "name": "Inverted Rows",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "055",
@@ -491,8 +653,11 @@
     "muscleGroup": "core",
     "name": "V-Ups",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "056",
@@ -500,8 +665,11 @@
     "muscleGroup": "legs",
     "name": "Hip Thrusts",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight with equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "057",
@@ -509,8 +677,11 @@
     "muscleGroup": "arms",
     "name": "Close Grip Bench Press",
     "description": "Perform 4 sets of 8 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "058",
@@ -518,8 +689,11 @@
     "muscleGroup": "chest",
     "name": "Landmine Press",
     "description": "Perform 4 sets of 10 reps.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "059",
@@ -527,8 +701,11 @@
     "muscleGroup": "back",
     "name": "Reverse Fly",
     "description": "Perform 4 sets of 12 reps with dumbbells.",
-    "time (minutes)": 8,
-    "means": "gym strength"
+    "time_minutes": 8,
+    "means": "gym strength",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["gym"]
   },
   {
     "code": "060",
@@ -536,8 +713,11 @@
     "muscleGroup": "core",
     "name": "Windshield Wipers",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5.5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5.5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "061",
@@ -545,8 +725,11 @@
     "muscleGroup": "full body",
     "name": "Swimming",
     "description": "Swim at a moderate pace for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "062",
@@ -554,8 +737,11 @@
     "muscleGroup": "full body",
     "name": "Rowing",
     "description": "Row at a moderate pace for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "063",
@@ -563,8 +749,11 @@
     "muscleGroup": "full body",
     "name": "Jump Rope",
     "description": "Jump rope for 15 minutes.",
-    "time (minutes)": 15,
-    "means": "cardio"
+    "time_minutes": 15,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "064",
@@ -572,8 +761,11 @@
     "muscleGroup": "full body",
     "name": "High Knees",
     "description": "Perform 3 sets of 1 minute.",
-    "time (minutes)": 5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "065",
@@ -581,8 +773,11 @@
     "muscleGroup": "full body",
     "name": "Butt Kicks",
     "description": "Perform 3 sets of 1 minute.",
-    "time (minutes)": 5,
-    "means": "bodyweight no equipment"
+    "time_minutes": 5,
+    "means": "bodyweight no equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "no_equipment"]
   },
   {
     "code": "066",
@@ -590,8 +785,11 @@
     "muscleGroup": "full body",
     "name": "Boxing",
     "description": "Box for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "067",
@@ -599,8 +797,11 @@
     "muscleGroup": "full body",
     "name": "Shadow Boxing",
     "description": "Shadow box for 15 minutes.",
-    "time (minutes)": 15,
-    "means": "cardio"
+    "time_minutes": 15,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "068",
@@ -608,8 +809,11 @@
     "muscleGroup": "full body",
     "name": "Dancing",
     "description": "Dance for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "069",
@@ -617,8 +821,11 @@
     "muscleGroup": "full body",
     "name": "Stair Climbing",
     "description": "Climb stairs for 15 minutes.",
-    "time (minutes)": 15,
-    "means": "cardio"
+    "time_minutes": 15,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "070",
@@ -626,8 +833,11 @@
     "muscleGroup": "full body",
     "name": "Elliptical",
     "description": "Use the elliptical for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "071",
@@ -635,8 +845,11 @@
     "muscleGroup": "full body",
     "name": "Treadmill",
     "description": "Run on the treadmill for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "072",
@@ -644,8 +857,11 @@
     "muscleGroup": "full body",
     "name": "Hiking",
     "description": "Hike for 60 minutes.",
-    "time (minutes)": 60,
-    "means": "cardio"
+    "time_minutes": 60,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "073",
@@ -653,8 +869,11 @@
     "muscleGroup": "full body",
     "name": "Walking",
     "description": "Walk at a brisk pace for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "074",
@@ -662,8 +881,11 @@
     "muscleGroup": "full body",
     "name": "Zumba",
     "description": "Perform Zumba for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "075",
@@ -671,8 +893,11 @@
     "muscleGroup": "full body",
     "name": "Kickboxing",
     "description": "Perform kickboxing for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "cardio"
+    "time_minutes": 30,
+    "means": "cardio",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "076",
@@ -680,8 +905,11 @@
     "muscleGroup": "full body",
     "name": "Aerobics",
     "description": "Perform aerobics for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "077",
@@ -689,8 +917,11 @@
     "muscleGroup": "full body",
     "name": "Step Aerobics",
     "description": "Perform step aerobics for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "078",
@@ -698,8 +929,11 @@
     "muscleGroup": "full body",
     "name": "Water Aerobics",
     "description": "Perform water aerobics for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "079",
@@ -707,8 +941,11 @@
     "muscleGroup": "full body",
     "name": "Dance Aerobics",
     "description": "Perform dance aerobics for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "080",
@@ -716,8 +953,11 @@
     "muscleGroup": "full body",
     "name": "Kickboxing Aerobics",
     "description": "Perform kickboxing aerobics for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "081",
@@ -725,8 +965,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Kickboxing",
     "description": "Perform cardio kickboxing for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "082",
@@ -734,8 +977,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Dance",
     "description": "Perform cardio dance for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "083",
@@ -743,8 +989,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Sculpt",
     "description": "Perform cardio sculpt for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "084",
@@ -752,8 +1001,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Step",
     "description": "Perform cardio step for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "085",
@@ -761,8 +1013,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Circuit",
     "description": "Perform cardio circuit for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "086",
@@ -770,8 +1025,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Blast",
     "description": "Perform cardio blast for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "087",
@@ -779,8 +1037,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Fusion",
     "description": "Perform cardio fusion for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "088",
@@ -788,8 +1049,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Intervals",
     "description": "Perform cardio intervals for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "089",
@@ -797,8 +1061,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Strength",
     "description": "Perform cardio strength for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "090",
@@ -806,8 +1073,11 @@
     "muscleGroup": "full body",
     "name": "Cardio Tone",
     "description": "Perform cardio tone for 30 minutes.",
-    "time (minutes)": 30,
-    "means": "gym aerobics"
+    "time_minutes": 30,
+    "means": "gym aerobics",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
   },
   {
     "code": "091",
@@ -815,8 +1085,11 @@
     "muscleGroup": "arms",
     "name": "Resistance Band Bicep Curls",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "092",
@@ -824,8 +1097,11 @@
     "muscleGroup": "legs",
     "name": "Resistance Band Squats",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "093",
@@ -833,8 +1109,11 @@
     "muscleGroup": "core",
     "name": "Ab Wheel Rollouts",
     "description": "Perform 3 sets of 10 reps.",
-    "time (minutes)": 5,
-    "means": "bodyweight with equipment"
+    "time_minutes": 5,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "094",
@@ -842,8 +1121,11 @@
     "muscleGroup": "arms",
     "name": "TRX Tricep Extensions",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "095",
@@ -851,8 +1133,11 @@
     "muscleGroup": "legs",
     "name": "TRX Lunges",
     "description": "Perform 3 sets of 15 reps per leg.",
-    "time (minutes)": 7,
-    "means": "bodyweight with equipment"
+    "time_minutes": 7,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "096",
@@ -860,8 +1145,11 @@
     "muscleGroup": "core",
     "name": "TRX Pikes",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "097",
@@ -869,8 +1157,11 @@
     "muscleGroup": "arms",
     "name": "Resistance Band Tricep Extensions",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "098",
@@ -878,8 +1169,11 @@
     "muscleGroup": "legs",
     "name": "Resistance Band Deadlifts",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "099",
@@ -887,8 +1181,11 @@
     "muscleGroup": "core",
     "name": "Medicine Ball Slams",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 5,
-    "means": "bodyweight with equipment"
+    "time_minutes": 5,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "100",
@@ -896,8 +1193,11 @@
     "muscleGroup": "arms",
     "name": "TRX Bicep Curls",
     "description": "Perform 3 sets of 12 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "time_minutes": 6,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
   {
     "code": "101",
@@ -905,43 +1205,445 @@
     "muscleGroup": "legs",
     "name": "TRX Hamstring Curls",
     "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 7,
-    "means": "bodyweight with equipment"
+    "time_minutes": 7,
+    "means": "bodyweight with equipment",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain", "general_fitness"],
+    "workout_preferences": ["home", "bodyweight", "with_equipment"]
   },
-  {
-    "code": "102",
-    "type": "strength",
-    "muscleGroup": "core",
-    "name": "Resistance Band Russian Twists",
-    "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
-  },
+
   {
     "code": "103",
-    "type": "strength",
-    "muscleGroup": "arms",
-    "name": "Resistance Band Shoulder Press",
-    "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "type": "cardio",
+    "muscleGroup": "legs",
+    "name": "Sprint Intervals",
+    "description": "30s max sprint + 90s jog, repeat 10x",
+    "time_minutes": 20,
+    "means": "outdoor/track",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance", "fat_loss"],
+    "workout_preferences": ["outdoor"]
   },
   {
     "code": "104",
-    "type": "strength",
+    "type": "cardio",
     "muscleGroup": "legs",
-    "name": "TRX Squats",
-    "description": "Perform 3 sets of 15 reps.",
-    "time (minutes)": 7,
-    "means": "bodyweight with equipment"
+    "name": "Hill Repeats",
+    "description": "8x 1min uphill runs with 2min walk recovery",
+    "time_minutes": 25,
+    "means": "outdoor",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["outdoor"]
   },
   {
     "code": "105",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Cycling Intervals",
+    "description": "5min warm-up + 8x (1min max effort + 2min recovery) + 5min cooldown",
+    "time_minutes": 35,
+    "means": "stationary bike",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "106",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Weighted Pull-ups",
+    "description": "4x5 reps with 10kg added weight",
+    "time_minutes": 12,
+    "means": "gym strength",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "107",
+    "type": "strength",
+    "muscleGroup": "chest",
+    "name": "Plyometric Push-ups",
+    "description": "3x10 explosive reps with clap",
+    "time_minutes": 8,
+    "means": "bodyweight no equipment",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["home"]
+  },
+  {
+    "code": "108",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Rowing Pyramid",
+    "description": "500m-1000m-1500m-1000m-500m intervals with 2min rest",
+    "time_minutes": 40,
+    "means": "rowing machine",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "109",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Pistol Squats",
+    "description": "3x8 reps per leg (assisted if needed)",
+    "time_minutes": 10,
+    "means": "bodyweight no equipment",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["home"]
+  },
+  {
+    "code": "110",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Stair Sprints",
+    "description": "10x 30s stair sprints with 1min rest",
+    "time_minutes": 15,
+    "means": "outdoor",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["fat_loss"],
+    "workout_preferences": ["outdoor"]
+  },
+  {
+    "code": "111",
     "type": "strength",
     "muscleGroup": "core",
-    "name": "TRX Mountain Climbers",
-    "description": "Perform 3 sets of 20 reps.",
-    "time (minutes)": 6,
-    "means": "bodyweight with equipment"
+    "name": "Dragon Flags",
+    "description": "3x6 reps (progressions for beginners)",
+    "time_minutes": 8,
+    "means": "bodyweight no equipment",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["home"]
+  },
+  {
+    "code": "112",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Fartlek Running",
+    "description": "45min variable pace (mix sprints/jogs)",
+    "time_minutes": 45,
+    "means": "outdoor",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["outdoor"]
+  },
+  {
+    "code": "113",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "21s Bicep Curls",
+    "description": "7 half-reps bottom + 7 half-reps top + 7 full reps",
+    "time_minutes": 10,
+    "means": "dumbbells",
+    "experience_level": ["intermediate"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "114",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Swim Intervals",
+    "description": "10x 50m freestyle sprints with 30s rest",
+    "time_minutes": 30,
+    "means": "pool",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["outdoor"]
+  },
+  {
+    "code": "115",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Kettlebell Swings",
+    "description": "4x20 reps with 16kg kettlebell",
+    "time_minutes": 12,
+    "means": "kettlebell",
+    "experience_level": ["intermediate"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "116",
+    "type": "cardio",
+    "muscleGroup": "legs",
+    "name": "Trail Running",
+    "description": "60min run on uneven terrain",
+    "time_minutes": 60,
+    "means": "outdoor",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["outdoor"]
+  },
+  {
+    "code": "117",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Weighted Plank",
+    "description": "3x 1min hold with 10kg plate on back",
+    "time_minutes": 7,
+    "means": "gym strength",
+    "experience_level": ["advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "118",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Tempo Run",
+    "description": "20min at 80% max heart rate",
+    "time_minutes": 20,
+    "means": "outdoor",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["outdoor"]
+  },
+  {
+    "code": "119",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Sandbag Carry",
+    "description": "Carry a 20kg sandbag for 100m, 5 rounds with 1min rest",
+    "time_minutes": 15,
+    "means": "sandbag",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance", "strength"],
+    "workout_preferences": ["outdoor", "gym"]
+  },
+  {
+    "code": "120",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Box Jumps",
+    "description": "4x12 jumps onto a 24-inch box",
+    "time_minutes": 10,
+    "means": "plyometric box",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["explosiveness", "muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "121",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Battle Ropes",
+    "description": "30s waves + 30s slams, repeat for 10 rounds",
+    "time_minutes": 10,
+    "means": "battle ropes",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "122",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Hanging Knee Tucks",
+    "description": "3x15 reps with controlled movement",
+    "time_minutes": 8,
+    "means": "pull-up bar",
+    "experience_level": ["beginner", "intermediate"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "123",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Rowing Sprints",
+    "description": "10x 250m sprints with 1min rest",
+    "time_minutes": 20,
+    "means": "rowing machine",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "124",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Zottman Curls",
+    "description": "4x10 reps with dumbbells (rotate grip on descent)",
+    "time_minutes": 10,
+    "means": "dumbbells",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "125",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Sled Push",
+    "description": "Push a loaded sled 20m, 8 rounds with 1min rest",
+    "time_minutes": 15,
+    "means": "sled",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["strength", "endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "126",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Renegade Rows",
+    "description": "3x10 reps per arm with dumbbells",
+    "time_minutes": 12,
+    "means": "dumbbells",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "127",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Assault Bike Intervals",
+    "description": "20s max effort + 40s rest, repeat 15x",
+    "time_minutes": 15,
+    "means": "assault bike",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "128",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Step-ups with Knee Drive",
+    "description": "3x12 reps per leg with dumbbells",
+    "time_minutes": 10,
+    "means": "dumbbells + bench",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "129",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Jump Rope Intervals",
+    "description": "1min fast + 30s rest, repeat 15x",
+    "time_minutes": 22.5,
+    "means": "jump rope",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["home", "gym"]
+  },
+  {
+    "code": "130",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Cable Woodchoppers",
+    "description": "3x12 reps per side with cable machine",
+    "time_minutes": 10,
+    "means": "cable machine",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "131",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Swim Sprints",
+    "description": "10x 25m freestyle sprints with 30s rest",
+    "time_minutes": 15,
+    "means": "pool",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["outdoor"]
+  },
+  {
+    "code": "132",
+    "type": "strength",
+    "muscleGroup": "arms",
+    "name": "Overhead Cable Tricep Extensions",
+    "description": "4x12 reps with cable machine",
+    "time_minutes": 10,
+    "means": "cable machine",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "133",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Stair Climb Intervals",
+    "description": "5min climb + 2min rest, repeat 4x",
+    "time_minutes": 28,
+    "means": "stairs",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["outdoor", "gym"]
+  },
+  {
+    "code": "134",
+    "type": "strength",
+    "muscleGroup": "legs",
+    "name": "Wall Sit with Dumbbell Hold",
+    "description": "3x 1min hold with 10kg dumbbells",
+    "time_minutes": 8,
+    "means": "dumbbells",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "135",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Cross-Country Skiing",
+    "description": "45min moderate pace on ski machine",
+    "time_minutes": 45,
+    "means": "ski machine",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["endurance"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "136",
+    "type": "strength",
+    "muscleGroup": "back",
+    "name": "Single-Arm Dumbbell Rows",
+    "description": "4x10 reps per arm with dumbbells",
+    "time_minutes": 12,
+    "means": "dumbbells",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
+  },
+  {
+    "code": "137",
+    "type": "cardio",
+    "muscleGroup": "full body",
+    "name": "Shadow Boxing Intervals",
+    "description": "2min high intensity + 1min rest, repeat 8x",
+    "time_minutes": 24,
+    "means": "bodyweight",
+    "experience_level": ["beginner", "intermediate", "advanced"],
+    "fitness_goals": ["fat_loss", "endurance"],
+    "workout_preferences": ["home", "gym"]
+  },
+  {
+    "code": "138",
+    "type": "strength",
+    "muscleGroup": "core",
+    "name": "Weighted Sit-ups",
+    "description": "3x15 reps with 10kg plate",
+    "time_minutes": 8,
+    "means": "weight plate",
+    "experience_level": ["intermediate", "advanced"],
+    "fitness_goals": ["muscle_gain"],
+    "workout_preferences": ["gym"]
   }
+
 ]
+
