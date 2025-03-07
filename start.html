@@ -44,7 +44,26 @@
 
         <!-- Workout Plan Generator -->
         <div id="workout-plan-container" class="content-container" style="display: none;">
-            <!-- Page content removed -->
+            <button onclick="navigateToMenu()" class="btn-back">← Back to Menu</button>
+            <h2 class="workout-plan-title">Workout Plan Generator</h2>
+            <div class="motivational-message">
+                Workout planner tailored to your needs. Specify your goals and get feedback on what you should aim towards based on your BMI(Body mass index) calculator. Tailored to fit your schedule and integrate smoothly into your day-to-day. Extensive and diverse set of exercise options and combinations. The ultimate training guide and partner.
+            </div>
+            <!-- BMI Calculator -->
+            <div class="bmi-calculator">
+                <h3>Calculate Your BMI</h3>
+                <div class="input-group">
+                    <label for="weight">Weight (in pounds):</label>
+                    <input type="number" id="weight" class="form-input">
+                </div>
+                <div class="input-group">
+                    <label for="height-feet">Height:</label>
+                    <input type="number" id="height-feet" class="form-input" placeholder="Feet">
+                    <input type="number" id="height-inches" class="form-input" placeholder="Inches">
+                </div>
+                <button onclick="calculateBMI()" class="btn-main">Calculate BMI</button>
+                <div id="bmi-result" class="result-container"></div>
+            </div>
         </div>
 
         <!-- Exercise Database -->

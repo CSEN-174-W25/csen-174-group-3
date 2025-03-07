@@ -185,6 +185,31 @@ body {
   margin-bottom: 1rem;
 }
 
+.workout-plan-title {
+  color: var(--primary-blue);
+  font-size: 3rem; /* Smaller size */
+  font-weight: bold;
+  font-family: 'Fugaz One', cursive;
+  margin: 2rem auto 1rem; /* Centered and moved down */
+  text-align: center;
+}
+
+.motivational-message {
+  background: #e9f5ff;
+  border: 1px solid var(--primary-blue);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem; /* Added margin-top for separation */
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  font-weight: bold;
+  text-align: center;
+}
+
+.bmi-calculator {
+  margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
   .auth-container, .content-container {
       width: 90%;

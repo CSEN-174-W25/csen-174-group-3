@@ -117,6 +117,16 @@ async function calculateBMI() {
         return;
     }
 
+    if (weight <= 0 || weight > 1100) {
+        showResult("Please enter a valid weight (0-1100 pounds)", true);
+        return;
+    }
+
+    if (feet <= 0 || feet > 8 || inches < 0 || inches >= 12) {
+        showResult("Please enter a valid height (0-8 feet and 0-11 inches)", true);
+        return;
+    }
+
     try {
         const bmi = FitnessManager.calculateBMI(weight, feet, inches);
         showResult(`BMI: ${bmi.toFixed(2)}<br>${getBMISuggestion(bmi)}`);
@@ -126,10 +136,10 @@ async function calculateBMI() {
 }
 
 function getBMISuggestion(bmi) {
-    if (bmi < 18.5) return "Recommendation: Focus on muscle-building exercises";
-    if (bmi < 25) return "Recommendation: Maintain with balanced workouts";
-    if (bmi < 30) return "Recommendation: Focus on weight-loss exercises";
-    return "Recommendation: Consult a health professional";
+    if (bmi < 18.5) return "Your goal should be towards building strength and energy! Focus on resistance training to build muscle. Strength isn’t just about size—it’s about feeling powerful in your body!";
+    if (bmi < 25) return "You’re in a great place to refine your fitness! Maintain your strength with a mix of resistance training and cardio to boost endurance. Keep this up with workouts or functional training to push your limits and unlock new goals!";
+    if (bmi < 30) return "Let’s focus on fat loss while building strength! A mix of strength training and moderate-intensity cardio is key. Start with workouts you enjoy, and gradually increase intensity—you’ve got this!";
+    return "Your journey starts with consistency and movement that feels good! Begin with low-impact exercises to enhance endurance while getting each day better. Some bodyweight strength training to develop muscle. Small changes add up to big results—stay committed, and your body will thank you!";
 }
 
 async function searchExercises() {
