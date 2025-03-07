@@ -1,183 +1,218 @@
-const calculateBMI = async () => {
-  const heightFeet = parseFloat(document.getElementById('height-feet').value);
-  const heightInches = parseFloat(document.getElementById('height-inches').value);
-  const weightPounds = parseFloat(document.getElementById('weight').value);
+class Auth {
+    static signUp(username, password) {
+        const users = JSON.parse(localStorage.getItem("users")) || {};
+        if (users[username]) {
+            this.showMessage("Username already exists!", "error");
+            return;
+        }
+        users[username] = { password };
+        localStorage.setItem("users", JSON.stringify(users));
+        this.showMessage("Account created successfully!", "success");
+        showLogIn();
+    }
 
-  const totalHeightInches = (heightFeet * 12) + heightInches;
-  const heightMeters = totalHeightInches * 0.0254;
-  const weightKg = weightPounds * 0.453592;
+    static logIn(username, password) {
+        const users = JSON.parse(localStorage.getItem("users")) || {};
+        if (users[username]?.password === password) {
+            localStorage.setItem("currentUser", username);
+            document.getElementById("app-container").style.display = "block";
+            document.getElementById("auth-container").style.display = "none";
+        } else {
+            this.showMessage("Invalid credentials", "error");
+        }
+    }
 
-  const bmi = weightKg / (heightMeters * heightMeters);
+    static logOut() {
+        localStorage.removeItem("currentUser");
+        window.location.reload();
+    }
 
-  let result = '';
-  if (isNaN(bmi) || totalHeightInches <= 0 || weightPounds <= 0) {
-      result = 'Please enter valid numeric values.';
-  } else if (weightPounds > 1323) {
-      result = 'Weight cannot be greater than 1323 pounds.';
-  } else if (totalHeightInches > 99 || totalHeightInches < 16) {
-      result = 'Height cannot be greater than 99 inches or less than 16 inches.';
-  } else {
-      result = `Your BMI is: ${bmi.toFixed(2)}`;
-      const suggestion = getSuggestion(bmi);
-      result += `<br>${suggestion}`;
-      document.getElementById('goal-container').style.display = 'block';
-  }
+    static showMessage(message, type = "info") {
+        const messageEl = document.getElementById("auth-message");
+        messageEl.textContent = message;
+        messageEl.className = `auth-message ${type}`;
+    }
+}
 
-  document.getElementById('result').innerHTML = result;
-};
+class FitnessManager {
+    static async loadWorkouts() {
+        const response = await fetch('workouts.json');
+        return await response.json();
+    }
 
-const getSuggestion = (bmi) => {
-  if (bmi < 18.5) {
-      return "Great news! Your BMI results suggest that focusing on muscle-building exercises could be a great way to strengthen your body and boost your overall fitness. Let’s work on building muscle mass with a plan that fits your goals!";
-  } else if (bmi >= 18.5 && bmi < 25) {
-      return "You're on the right track! Your BMI results indicate that maintaining your current fitness level with a balanced mix of cardio and strength exercises is a great way to stay healthy and strong. Keep up the great work!";
-  } else if (bmi >= 25 && bmi < 30) {
-      return "Let’s reach your goals together! Your BMI results suggest that incorporating weight-loss-focused exercises can help you enhance your fitness and energy levels. A mix of cardio and strength training can be a great way to feel your best!";
-  } else {
-      return "You’re taking an important step toward a healthier you! Your BMI results indicate that focusing on exercises that support weight loss could help improve your overall well-being. A personalized fitness plan with fun and effective workouts will set you up for success!";
-  }
-};
+    static calculateBMI(weight, heightFeet, heightInches) {
+        const totalInches = (heightFeet * 12) + heightInches;
+        const heightMeters = totalInches * 0.0254;
+        const weightKg = weight * 0.453592;
+        return weightKg / (heightMeters ** 2);
+    }
 
-document.getElementById('btn-show-plan').addEventListener("click", async () => {
-  document.getElementById('result2').style.display = 'flex';
-  const heightFeet = parseFloat(document.getElementById('height-feet').value);
-  const heightInches = parseFloat(document.getElementById('height-inches').value);
-  const weightPounds = parseFloat(document.getElementById('weight').value);
-  const goal = document.getElementById('goal').value;
-  const workoutDays = parseInt(document.getElementById('workout-days').value);
-  const workoutDuration = parseInt(document.getElementById('workout-duration').value);
+    static generatePlan(workouts, goal, daysPerWeek, timePerSession) {
+        let filteredWorkouts;
+        if (goal === "weight-loss") {
+            filteredWorkouts = workouts.filter(w => w.type === "cardio");
+        } else if (goal === "muscle-gain") {
+            filteredWorkouts = workouts.filter(w => w.type === "strength");
+        } else {
+            filteredWorkouts = workouts;
+        }
 
-  const totalHeightInches = (heightFeet * 12) + heightInches;
-  const heightMeters = totalHeightInches * 0.0254;
-  const weightKg = weightPounds * 0.453592;
-  const bmi = weightKg / (heightMeters * heightMeters);
+        return Array.from({ length: daysPerWeek }, () => {
+            let dayPlan = [];
+            let totalTime = 0;
+            while (totalTime < timePerSession) {
+                const workout = filteredWorkouts[Math.floor(Math.random() * filteredWorkouts.length)];
+                const workoutTime = workout["time (minutes)"];
+                if (totalTime + workoutTime <= timePerSession) {
+                    dayPlan.push(workout);
+                    totalTime += workoutTime;
+                }
+            }
+            return dayPlan;
+        });
+    }
 
-  if (isNaN(bmi) || isNaN(workoutDays) || isNaN(workoutDuration) || workoutDays <= 0 || workoutDuration <= 0) {
-      document.getElementById('result2').innerHTML = 'Please enter valid numeric values for all fields.';
-      return;
-  }
+    static filterExercises(workouts, muscleGroup) {
+        return workouts.filter(w => w.muscleGroup === muscleGroup);
+    }
+}
 
-  console.log('Inputs are valid. Proceeding to show plan...');
-  await showPlan(bmi, goal, workoutDays, workoutDuration);
-});
+// DOM Interactions
+function showSignUp() {
+    document.getElementById("signup-form").style.display = "block";
+    document.getElementById("login-form").style.display = "none";
+    document.querySelector(".btn-switch[onclick='showLogIn()']").style.display = "block";
+    document.querySelector(".btn-switch[onclick='showSignUp()']").style.display = "none";
+}
 
-const showPlan = async () => {
-  document.getElementById('result2').style.display = 'flex';
-  const heightFeet = parseFloat(document.getElementById('height-feet').value);
-  const heightInches = parseFloat(document.getElementById('height-inches').value);
-  const weightPounds = parseFloat(document.getElementById('weight').value);
-  const goal = document.getElementById('goal').value;
-  const workoutDays = parseInt(document.getElementById('workout-days').value);
-  const workoutDuration = parseInt(document.getElementById('workout-duration').value);
+function showLogIn() {
+    document.getElementById("signup-form").style.display = "none";
+    document.getElementById("login-form").style.display = "block";
+    document.querySelector(".btn-switch[onclick='showLogIn()']").style.display = "none";
+    document.querySelector(".btn-switch[onclick='showSignUp()']").style.display = "block";
+}
 
-  const totalHeightInches = (heightFeet * 12) + heightInches;
-  const heightMeters = totalHeightInches * 0.0254;
-  const weightKg = weightPounds * 0.453592;
-  const bmi = weightKg / (heightMeters * heightMeters);
+function navigateToMenu() {
+    document.querySelectorAll(".content-container").forEach(el => el.style.display = "none");
+    document.getElementById("menu-container").style.display = "block";
+}
 
-  if (isNaN(bmi) || isNaN(workoutDays) || isNaN(workoutDuration) || workoutDays <= 0 || workoutDuration <= 0) {
-      document.getElementById('result2').innerHTML = 'Please enter valid numeric values for all fields.';
-      return;
-  }
+async function navigateToWorkoutPlan() {
+    document.getElementById("menu-container").style.display = "none";
+    document.getElementById("workout-plan-container").style.display = "block";
+}
 
-  console.log('Inputs are valid. Proceeding to show plan...');
-  const workouts = await loadWorkouts();
-  console.log('Loaded workouts:', workouts);
-  const filteredWorkouts = workouts.filter(workout => {
-      if (goal === 'weight loss') return workout.type === 'cardio' || workout.means === 'gym aerobics';
-      if (goal === 'muscle gain') return workout.type === 'strength';
-      if (goal === 'maintenance') return workout.type === 'cardio' || workout.type === 'strength' || workout.means === 'gym aerobics';
-  });
+async function navigateToExerciseSearch() {
+    document.getElementById("menu-container").style.display = "none";
+    document.getElementById("exercise-search-container").style.display = "block";
+}
 
-  console.log('Filtered workouts:', filteredWorkouts);
-  const workoutPlans = generateWorkoutPlans(filteredWorkouts, workoutDays, workoutDuration);
-  console.log('Generated workout plans:', workoutPlans);
-  let result2 = workoutPlans.map((plan, index) => `
-    <div class="workout-plan">
-      <h3>Day ${index + 1}</h3>
-      ${plan.map(workout => `
-        <div class="workout">
-          <h4>${workout.name}</h4>
-          <p>${workout.description}</p>
-          <p>Time: ${workout["time (minutes)"]} minutes</p>
+async function calculateBMI() {
+    const weight = parseFloat(document.getElementById("weight").value);
+    const feet = parseFloat(document.getElementById("height-feet").value);
+    const inches = parseFloat(document.getElementById("height-inches").value);
+
+    if ([weight, feet, inches].some(isNaN)) {
+        showResult("Please fill all fields with valid numbers", true);
+        return;
+    }
+
+    try {
+        const bmi = FitnessManager.calculateBMI(weight, feet, inches);
+        showResult(`BMI: ${bmi.toFixed(2)}<br>${getBMISuggestion(bmi)}`);
+    } catch (error) {
+        showResult(error.message, true);
+    }
+}
+
+function getBMISuggestion(bmi) {
+    if (bmi < 18.5) return "Recommendation: Focus on muscle-building exercises";
+    if (bmi < 25) return "Recommendation: Maintain with balanced workouts";
+    if (bmi < 30) return "Recommendation: Focus on weight-loss exercises";
+    return "Recommendation: Consult a health professional";
+}
+
+async function searchExercises() {
+    const muscleGroup = document.getElementById("muscle-group").value;
+    try {
+        const workouts = await FitnessManager.loadWorkouts();
+        const results = FitnessManager.filterExercises(workouts, muscleGroup);
+        displayExercises(results);
+    } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+    }
+}
+
+function displayExercises(exercises) {
+    const container = document.getElementById("exercise-results");
+    container.innerHTML = exercises.map(ex => `
+        <div class="exercise-card">
+            <h3>${ex.name}</h3>
+            <p>${ex.description}</p>
+            <div class="exercise-meta">
+                <span>Type: ${ex.type}</span>
+                <span>Duration: ${ex["time (minutes)"]} mins</span>
+                <span>Difficulty: ${ex.difficulty}</span>
+            </div>
         </div>
-      `).join('')}
-    </div>
-  `).join('');
+    `).join("");
+}
 
-  document.getElementById('result2').innerHTML = result2;
-};
+function showResult(message, isError = false) {
+    const resultEl = document.getElementById("bmi-result");
+    resultEl.innerHTML = isError 
+        ? `<div class="error">${message}</div>`
+        : `<div class="success">${message}</div>`;
+}
 
-const generateWorkoutPlans = (workouts, workoutDays, workoutDuration) => {
-  const plans = [];
-  for (let i = 0; i < workoutDays; i++) {
-      let plan = [];
-      let totalTime = 0;
-      while (totalTime < workoutDuration) {
-          const workout = workouts[Math.floor(Math.random() * workouts.length)];
-          if (totalTime + workout["time (minutes)"] <= workoutDuration) {
-              plan.push(workout);
-              totalTime += workout["time (minutes)"];
-          } else {
-              break;
-          }
-      }
-      plans.push(plan);
-  }
-  return plans;
-};
+async function generateWorkoutPlan() {
+    const goal = document.getElementById("goal").value;
+    const daysPerWeek = parseInt(document.getElementById("days-per-week").value);
+    const timePerSession = parseInt(document.getElementById("time-per-session").value);
 
-const limitCharacters = (element, maxLength) => {
-  if (element.value.length > maxLength) {
-      element.value = element.value.slice(0, maxLength);
-  }
-};
+    if (isNaN(daysPerWeek) || isNaN(timePerSession)) {
+        showResult("Please fill all fields with valid numbers", true);
+        return;
+    }
 
-const loadWorkouts = async () => {
-  const response = await fetch('workouts.json');
-  const workouts = await response.json();
-  return workouts;
-};
+    try {
+        const workouts = await FitnessManager.loadWorkouts();
+        const plan = FitnessManager.generatePlan(workouts, goal, daysPerWeek, timePerSession);
+        displayWorkoutPlan(plan);
+        navigateToWorkoutPlan();
+    } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+    }
+}
 
-const startApp = () => {
-  document.getElementById('intro-container').style.display = 'none';
-  document.getElementById('menu-container').style.display = 'block';
-};
+function displayWorkoutPlan(plan) {
+    const container = document.getElementById("workout-plan-result");
+    container.innerHTML = plan.map((day, index) => `
+        <div class="day-plan">
+            <h3>Day ${index + 1}</h3>
+            <div class="results-grid">
+                ${day.map(ex => `
+                    <div class="exercise-card">
+                        <h3>${ex.name}</h3>
+                        <p>${ex.description}</p>
+                        <div class="exercise-meta">
+                            <span>Type: ${ex.type}</span>
+                            <span>Duration: ${ex["time (minutes)"]} mins</span>
+                            <span>Difficulty: ${ex.difficulty}</span>
+                        </div>
+                    </div>
+                `).join("")}
+            </div>
+        </div>
+    `).join("");
+}
 
-const navigateToMenu = () => {
-  document.getElementById('intro-container').style.display = 'none';
-  document.getElementById('menu-container').style.display = 'block';
-  document.getElementById('workout-plan-container').style.display = 'none';
-  document.getElementById('exercise-search-container').style.display = 'none';
-};
-
-const navigateToWorkoutPlan = () => {
-  document.getElementById('menu-container').style.display = 'none';
-  document.getElementById('workout-plan-container').style.display = 'block';
-  document.getElementById('exercise-search-container').style.display = 'none';
-};
-
-const navigateToExerciseSearch = () => {
-  document.getElementById('menu-container').style.display = 'none';
-  document.getElementById('workout-plan-container').style.display = 'none';
-  document.getElementById('exercise-search-container').style.display = 'block';
-};
-
-const searchExercises = async () => {
-  const muscleGroup = document.getElementById('muscle-group').value;
-  const workouts = await loadWorkouts();
-  const filteredWorkouts = workouts.filter(workout => workout.muscleGroup === muscleGroup);
-
-  let resultHtml = filteredWorkouts.map(workout => `
-    <div class="workout">
-      <h4>${workout.name}</h4>
-      <p>${workout.description}</p>
-      <p>Time: ${workout["time (minutes)"]} minutes</p>
-    </div>
-  `).join('');
-
-  document.getElementById('exercise-results').innerHTML = resultHtml;
-};
-
-// Ensure the calculateBMI function is called when the button is clicked
-document.querySelector('.btn-calculate').addEventListener('click', calculateBMI);
+// Initialize App
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("currentUser")) {
+        document.getElementById("app-container").style.display = "block";
+        document.getElementById("auth-container").style.display = "none";
+    } else {
+        document.getElementById("auth-container").style.display = "block";
+    }
+});

@@ -4,114 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="normalize.css/normalize.css">
     <link rel="stylesheet" href="start.css">
-    <title>Gym</title>
+    <title>FitBuilder</title>
 </head>
 <body>
-    <div class="title"><img src="img/logo.jpeg" alt="" class="title"></div>
-
-    <div id="intro-container" class="intro-container">
-        <h1>Welcome to FitBuilder</h1>
-        <p>Maintaining a consistent workout routine is challenging for individuals juggling busy schedules, diverse fitness goals, and limited access to resources. Many fitness enthusiasts struggle with:</p>
-        <ul>
-            <li>Identifying effective workouts tailored to their specific goals.</li>
-            <li>Balancing whole-body and specialized workouts.</li>
-            <li>Scheduling workouts within limited time frames.</li>
-            <li>Accessing workouts that accommodate available equipment and personal preferences.</li>
-        </ul>
-        <p>Introducing Fit Tracker– a comprehensive fitness tool designed to make working out more convenient and effective. This application empowers users to achieve their fitness goals by:</p>
-        <ul>
-            <li>Providing a database of workouts categorized by muscle groups, accessibility, and effectiveness.</li>
-            <li>Allowing users to input fitness goals, such as muscle gain, weight loss, or endurance improvement.</li>
-            <li>Generating personalized workout plans based on user schedules, equipment availability, and preferences.</li>
-            <li>Enabling users to search and explore workouts within the database.</li>
-            <li>Offering holistic fitness support, integrating nutrition tips and mental well-being guidance.</li>
-        </ul>
-        <button onclick="navigateToMenu()" class="btn-get-started">Get Started!</button>
-    </div>
-
-    <div id="menu-container" class="menu-container" style="display: none;">
-        <h1>Menu</h1>
-        <button onclick="navigateToWorkoutPlan()" class="btn-get-started">Workout Plan Generator</button>
-        <button onclick="navigateToExerciseSearch()" class="btn-get-started">Muscle Group Exercise Search</button>
-    </div>
-
-    <div id="workout-plan-container" style="display: none;">
-        <button onclick="navigateToMenu()" class="go-back-button">Go Back</button>
-        <div class="form_container"> 
-            <div class="form_group">
-                <input type="number" id="weight" min="0" class="form_input" name="weight" required oninput="limitCharacters(this, 4)" placeholder=" ">
-                <label for="weight" class="form_label">Weight (lbs)</label>
-                <span class="form_line"></span>
-            </div>
-            <div class="form_group">
-                <i class="icon fa-solid fa-eye" id="eye"></i>
-                <input type="number" min="0" id="height-feet" class="form_input" name="height-feet" oninput="limitCharacters(this, 2)" placeholder=" ">
-                <label for="height-feet" class="form_label">Height (feet)</label>
-                <span class="form_line"></span>
-            </div>
-            <div class="form_group">
-                <i class="icon fa-solid fa-eye" id="eye"></i>
-                <input type="number" min="0" id="height-inches" class="form_input" name="height-inches" oninput="limitCharacters(this, 2)" placeholder=" ">
-                <label for="height-inches" class="form_label">Height (inches)</label>
-                <span class="form_line"></span>
-            </div>
-        </div>
-        <div class="cont-calculate">
-            <button onclick="calculateBMI()" class="btn-calculate">Calculate BMI</button>
-            <div id="result" class="result-box"></div>
+    <!-- Auth Container -->
+    <div id="auth-container" class="auth-container">
+        <div class="title"><img src="assets/img/logo.jpeg" alt="FitBuilder Logo" class="title-img"></div>
+        <h2>Welcome to FitBuilder</h2>
+        
+        <!-- Signup Form -->
+        <div id="signup-form" style="display: none;">
+            <input type="text" id="signup-username" class="form-input" placeholder="Username">
+            <input type="password" id="signup-password" class="form-input" placeholder="Password">
+            <button onclick="Auth.signUp(document.getElementById('signup-username').value, document.getElementById('signup-password').value)" class="btn-main">Create Account</button>
         </div>
 
-        <div id="goal-container" class="form_container" style="display: none; justify-content: center; align-items: center; max-width: 400px; margin: 0 auto;">
-            <div class="form_group">
-                <select id="goal" class="form_input" name="goal">
-                    <option value="weight loss">Weight Loss</option>
-                    <option value="muscle gain">Muscle Gain</option>
-                    <option value="maintenance">Maintenance</option>
+        <!-- Login Form -->
+        <div id="login-form">
+            <input type="text" id="login-username" class="form-input" placeholder="Username">
+            <input type="password" id="login-password" class="form-input" placeholder="Password">
+            <button onclick="Auth.logIn(document.getElementById('login-username').value, document.getElementById('login-password').value)" class="btn-main">Log In</button>
+        </div>
+
+        <p id="auth-message" class="auth-message"></p>
+        <button onclick="showSignUp()" class="btn-switch">New user? Sign Up</button>
+        <button onclick="showLogIn()" class="btn-switch" style="display: none;">Already have an account? Log In</button>
+    </div>
+
+    <!-- Main App -->
+    <div id="app-container" style="display: none;">
+        <div class="title"><img src="assets/img/logo.jpeg" alt="FitBuilder Logo" class="title-img main-logo"></div>
+        
+        <!-- Main Menu -->
+        <div id="menu-container" class="menu-container">
+            <h1 class="main-title">FitBuilder</h1>
+            <button onclick="navigateToWorkoutPlan()" class="btn-main">Create Workout Plan</button>
+            <button onclick="navigateToExerciseSearch()" class="btn-main">Exercise Database</button>
+            <button onclick="Auth.logOut()" class="btn-logout">Log Out</button>
+        </div>
+
+        <!-- Workout Plan Generator -->
+        <div id="workout-plan-container" class="content-container" style="display: none;">
+            <button onclick="navigateToMenu()" class="btn-back">← Back to Menu</button>
+            <div class="form-section">
+                <div class="input-group">
+                    <label>Weight (lbs)</label>
+                    <input type="number" id="weight" class="form-input" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Height (feet)</label>
+                    <input type="number" id="height-feet" class="form-input" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Height (inches)</label>
+                    <input type="number" id="height-inches" class="form-input" min="0" max="11">
+                </div>
+                <button onclick="calculateBMI()" class="btn-action">Calculate BMI</button>
+                <div id="bmi-result" class="result-container"></div>
+                <div class="input-group">
+                    <label>Goal</label>
+                    <select id="goal" class="form-input">
+                        <option value="weight-loss">Weight Loss</option>
+                        <option value="muscle-gain">Muscle Gain</option>
+                        <option value="maintaining">Maintaining</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Days per Week</label>
+                    <input type="number" id="days-per-week" class="form-input" min="1" max="7">
+                </div>
+                <div class="input-group">
+                    <label>Time per Session (minutes)</label>
+                    <input type="number" id="time-per-session" class="form-input" min="1">
+                </div>
+                <button onclick="generateWorkoutPlan()" class="btn-action">Generate Workout Plan</button>
+                <div id="workout-plan-result" class="result-container"></div>
+            </div>
+        </div>
+
+        <!-- Exercise Database -->
+        <div id="exercise-search-container" class="content-container" style="display: none;">
+            <button onclick="navigateToMenu()" class="btn-back">← Back to Menu</button>
+            <div class="search-section">
+                <select id="muscle-group" class="form-input">
+                    <option value="legs">Legs</option>
+                    <option value="arms">Arms</option>
+                    <option value="chest">Chest</option>
+                    <option value="back">Back</option>
+                    <option value="core">Core</option>
                 </select>
-                <label for="goal" class="form_label">Fitness Goal</label>
-                <span class="form_line"></span>
+                <button onclick="searchExercises()" class="btn-action">Search Exercises</button>
             </div>
-            <div class="form_group">
-                <input type="number" id="workout-days" min="1" max="7" class="form_input" name="workout-days" placeholder=" ">
-                <label for="workout-days" class="form_label">Days per Week</label>
-                <span class="form_line"></span>
-            </div>
-            <div class="form_group">
-                <input type="number" id="workout-duration" min="1" class="form_input" name="workout-duration" placeholder=" ">
-                <label for="workout-duration" class="form_label">Workout Duration (minutes)</label>
-                <span class="form_line"></span>
-            </div>
-            <div class="cont-calculate">
-                <button onclick="showPlan()" class="btn-calculate" id="btn-show-plan">Show Plan</button>
-            </div>
+            <div id="exercise-results" class="results-grid"></div>
         </div>
-
-        <div id="result2" class="plan-container" style="display: none; flex-direction: column;">
-            <button onclick="navigateToExerciseSearch()" class="btn-calculate">Exercise Search</button>
-        </div>
-    </div>
-
-    <div id="exercise-search-container" class="exercise-search-container" style="display: none;">
-        <button onclick="navigateToMenu()" class="go-back-button">Go Back</button>
-        <h1 style="text-align: center; margin-top: 20px;">Muscle Group Exercise Search</h1>
-        <div class="form_group">
-            <select id="muscle-group" class="form_input" name="muscle-group">
-                <option value="legs">Legs</option>
-                <option value="arms">Arms</option>
-                <option value="chest">Chest</option>
-                <option value="back">Back</option>
-                <option value="core">Core</option>
-                <option value="full body">Full Body</option>
-            </select>
-            <label for="muscle-group" class="form_label">Select Muscle Group</label>
-            <span class="form_line"></span>
-        </div>
-        <div class="cont-calculate">
-            <button onclick="searchExercises()" class="btn-calculate">Search</button>
-        </div>
-        <div id="exercise-results" class="exercise-results"></div>
     </div>
 
     <script src="start.js"></script>
