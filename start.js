@@ -89,17 +89,21 @@ class FitnessManager {
 
 // DOM Interactions
 function showSignUp() {
-    document.getElementById("signup-form").style.display = "block";
-    document.getElementById("login-form").style.display = "none";
-    document.querySelector(".btn-switch[onclick='showLogIn()']").style.display = "block";
-    document.querySelector(".btn-switch[onclick='showSignUp()']").style.display = "none";
+    document.getElementById("login-form").classList.add("fade-out");
+    setTimeout(() => {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("signup-form").style.display = "block";
+        document.getElementById("signup-form").classList.remove("fade-out");
+    }, 300);
 }
 
 function showLogIn() {
-    document.getElementById("signup-form").style.display = "none";
-    document.getElementById("login-form").style.display = "block";
-    document.querySelector(".btn-switch[onclick='showLogIn()']").style.display = "none";
-    document.querySelector(".btn-switch[onclick='showSignUp()']").style.display = "block";
+    document.getElementById("signup-form").classList.add("fade-out");
+    setTimeout(() => {
+        document.getElementById("signup-form").style.display = "none";
+        document.getElementById("login-form").style.display = "block";
+        document.getElementById("login-form").classList.remove("fade-out");
+    }, 300);
 }
 
 function navigateToMenu() {
@@ -317,4 +321,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         document.getElementById("auth-container").style.display = "block";
     }
+    document.querySelector(".welcome-title").classList.add("fade-in");
+    document.querySelector(".auth-container").classList.add("slide-fade-in");
 });
