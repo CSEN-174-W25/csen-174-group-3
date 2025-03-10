@@ -17,6 +17,7 @@ class Auth {
             localStorage.setItem("currentUser", username);
             document.getElementById("app-container").style.display = "block";
             document.getElementById("auth-container").style.display = "none";
+            document.querySelector('.hero-section').style.display = 'none';
         } else {
             this.showMessage("Invalid credentials", "error");
         }
@@ -24,6 +25,7 @@ class Auth {
 
     static logOut() {
         localStorage.removeItem("currentUser");
+        document.querySelector('.hero-section').style.display = 'block';
         window.location.reload();
     }
 
@@ -307,7 +309,9 @@ function displayWorkoutPlan(plan) {
 
 // Initialize App
 document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("currentUser")) {
+    const isLoggedIn = localStorage.getItem("currentUser");
+    document.querySelector('.hero-section').style.display = isLoggedIn ? 'none' : 'block';
+    if (isLoggedIn) {
         document.getElementById("app-container").style.display = "block";
         document.getElementById("auth-container").style.display = "none";
     } else {

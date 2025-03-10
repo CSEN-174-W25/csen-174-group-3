@@ -8,19 +8,28 @@
     <title>FitBuilder</title>
 </head>
 <body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Achieve Your Best Shape with FitBuilder!</h1>
+            <p>Personalized fitness plans tailored to your goals.</p>
+            <button onclick="document.getElementById('auth-container').scrollIntoView({ behavior: 'smooth' });">Get Started</button>
+        </div>
+    </div>
+
     <!-- Auth Container -->
     <div id="auth-container" class="auth-container">
         <h2 class="welcome-title">Welcome to FitBuilder!</h2>
         
         <!-- Signup Form -->
-        <div id="signup-form" style="display: none;">
+        <div id="signup-form" class="form-container" style="display: none;">
             <input type="text" id="signup-username" class="form-input" placeholder="Username">
             <input type="password" id="signup-password" class="form-input" placeholder="Password">
             <button onclick="Auth.signUp(document.getElementById('signup-username').value, document.getElementById('signup-password').value)" class="btn-main">Create Account</button>
         </div>
 
         <!-- Login Form -->
-        <div id="login-form">
+        <div id="login-form" class="form-container">
             <input type="text" id="login-username" class="form-input" placeholder="Username">
             <input type="password" id="login-password" class="form-input" placeholder="Password">
             <button onclick="Auth.logIn(document.getElementById('login-username').value, document.getElementById('login-password').value)" class="btn-main">Log In</button>
@@ -32,7 +41,7 @@
     </div>
 
     <!-- Main App -->
-    <div id="app-container" style="display: none;">
+    <div id="app-container" class="app-container" style="display: none;">
         
         <!-- Main Menu -->
         <div id="menu-container" class="menu-container">

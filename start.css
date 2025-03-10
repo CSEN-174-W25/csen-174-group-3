@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
   --primary-blue: #1f4b8e; /* Darker blue */
@@ -6,6 +7,10 @@
   --background: #f8f9fa;
   --text-dark: #2c3e50;
   --error-red: #e74c3c;
+  --button-gradient-start: #1f4b8e;
+  --button-gradient-end: #163a6b;
+  --input-shadow: rgba(0, 0, 0, 0.1);
+  --button-shadow: rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -18,6 +23,89 @@
 body {
   background-color: var(--background);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background: url('fitness-hero.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  color: white;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.hero-content button {
+  background: linear-gradient(135deg, var(--button-gradient-start), var(--button-gradient-end));
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px var(--button-shadow);
+  margin-top: 1rem;
+}
+
+.hero-content button:hover {
+  background: linear-gradient(135deg, var(--button-gradient-end), var(--button-gradient-start));
+  box-shadow: 0 6px 12px var(--button-shadow);
+  transform: scale(1.05);
 }
 
 /* Auth Container */
@@ -29,6 +117,14 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 100%;
 }
 
 .form-input {
@@ -38,16 +134,18 @@ body {
   border: 2px solid #ddd;
   border-radius: 6px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px var(--input-shadow);
 }
 
 .form-input:focus {
   border-color: var(--primary-blue);
   outline: none;
+  box-shadow: 0 4px 8px var(--input-shadow);
 }
 
 .btn-main {
-  background: var(--primary-blue);
+  background: linear-gradient(135deg, var(--button-gradient-start), var(--button-gradient-end));
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -56,11 +154,13 @@ body {
   font-size: 1rem;
   margin: 1rem 0;
   width: 100%;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px var(--button-shadow);
 }
 
 .btn-main:hover {
-  background: var(--secondary-blue);
+  background: linear-gradient(135deg, var(--button-gradient-end), var(--button-gradient-start));
+  box-shadow: 0 6px 12px var(--button-shadow);
 }
 
 .btn-switch {
@@ -82,6 +182,14 @@ body {
 }
 
 /* Main App */
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .menu-container {
   text-align: center;
   padding: 2rem;
@@ -97,6 +205,10 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-back {
@@ -114,6 +226,10 @@ body {
 
 .search-section {
   margin-top: 4rem; /* Increased margin-top for spacing */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .important-message {
@@ -130,6 +246,7 @@ body {
 
 .input-group {
   margin: 1.5rem 0;
+  width: 100%;
 }
 
 .input-group label {
@@ -208,12 +325,14 @@ body {
 
 .bmi-calculator {
   margin-top: 2rem;
+  width: 100%;
 }
 
 .goal-selector,
 .experience-level-selector,
 .workout-preferences-selector {
   margin-top: 2rem;
+  width: 100%;
 }
 
 .message-box {
@@ -232,5 +351,18 @@ body {
       width: 90%;
       margin: 1rem auto;
       padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .hero-content button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
