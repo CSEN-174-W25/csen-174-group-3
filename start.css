@@ -22,9 +22,8 @@
 }
 
 body {
-  background: url('path/to/pattern.png'); /* Replace with actual pattern image */
+  background: url('pattern.png') repeat;
   background-size: cover;
-  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -451,6 +450,16 @@ a:hover::after {
   color: var(--text-dark);
   font-weight: bold;
   text-align: center;
+}
+
+#macro-calculator-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 @media (max-width: 768px) {

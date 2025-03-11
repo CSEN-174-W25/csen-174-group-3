@@ -121,6 +121,11 @@ async function navigateToExerciseSearch() {
     document.getElementById("exercise-search-container").style.display = "block";
 }
 
+function navigateToMacroCalculator() {
+    document.getElementById("menu-container").style.display = "none";
+    document.getElementById("macro-calculator-container").style.display = "block";
+}
+
 async function calculateBMI() {
     const weight = parseFloat(document.getElementById("weight").value);
     const feet = parseFloat(document.getElementById("height-feet").value);
@@ -309,6 +314,81 @@ function displayWorkoutPlan(plan) {
     workoutPlanHTML += '</div>';
     container.innerHTML = workoutPlanHTML;
     console.log("Workout plan HTML:", workoutPlanHTML); // Debugging line
+}
+
+function calculateBMR() {
+    const weight = parseFloat(document.getElementById("macro-weight").value);
+    const heightFeet = parseFloat(document.getElementById("macro-height-feet").value);
+    const heightInches = parseFloat(document.getElementById("macro-height-inches").value);
+    const gender = document.getElementById("macro-gender").value;
+    const age = parseFloat(document.getElementById("macro-age").value);
+    const activityLevel = parseFloat(document.getElementById("macro-activity-level").value);
+    const goal = document.getElementById("macro-goal").value;
+
+    if ([weight, heightFeet, heightInches, age, activityLevel].some(isNaN)) {
+        document.getElementById("macro-result").value = "Please fill all fields with valid numbers.";
+        return;
+    }
+
+    const totalHeightInches = (heightFeet * 12) + heightInches;
+    let bmr;
+
+    if (gender === "male") {
+        bmr = 66 + (6.23 * weight) + (12.7 * totalHeightInches) - (6.8 * age);
+    } else if (gender === "female") {
+        bmr = 655 + (4.35 * weight) + (4.7 * totalHeightInches) - (4.7 * age);
+    } else {
+        document.getElementById("macro-result").value = "Invalid gender selected.";
+        return;
+    }
+
+    let totalCalories = bmr * activityLevel;
+
+    if (goal === "fat_loss") {
+        totalCalories -= 500;
+    } else if (goal === "muscle_gain") {
+        totalCalories += 500;
+    }
+
+    document.getElementById("macro-result").value = 
+        `Based on your physical data and goals, your daily calorie intake should be approximately ${totalCalories.toFixed(2)} calories/day.`;
+
+    // Calculate macronutrient breakdown
+    let proteinPercentage, carbsPercentage, fatsPercentage;
+
+    if (goal === "fat_loss") {
+        proteinPercentage = 0.40;
+        carbsPercentage = 0.40;
+        fatsPercentage = 0.20;
+    } else if (goal === "muscle_gain") {
+        proteinPercentage = 0.30;
+        carbsPercentage = 0.50;
+        fatsPercentage = 0.20;
+    } else if (goal === "maintenance") {
+        proteinPercentage = 0.25;
+        carbsPercentage = 0.50;
+        fatsPercentage = 0.25;
+    }
+
+    const proteinCalories = totalCalories * proteinPercentage;
+    const carbsCalories = totalCalories * carbsPercentage;
+    const fatsCalories = totalCalories * fatsPercentage;
+
+    const proteinGrams = proteinCalories / 4;
+    const carbsGrams = carbsCalories / 4;
+    const fatsGrams = fatsCalories / 9;
+
+    const mealsPerDay = 4;
+    const proteinPerMeal = proteinGrams / mealsPerDay;
+    const carbsPerMeal = carbsGrams / mealsPerDay;
+    const fatsPerMeal = fatsGrams / mealsPerDay;
+
+    document.getElementById("macro-additional-result").value = 
+        `Macronutrient Breakdown:\n` +
+        `To achieve your goal, you should consume the following macros daily:\n` +
+        `Protein: ${proteinGrams.toFixed(2)}g (${proteinPerMeal.toFixed(2)}g per meal)\n` +
+        `Carbs: ${carbsGrams.toFixed(2)}g (${carbsPerMeal.toFixed(2)}g per meal)\n` +
+        `Fats: ${fatsGrams.toFixed(2)}g (${fatsPerMeal.toFixed(2)}g per meal)`;
 }
 
 // Initialize App
