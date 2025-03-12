@@ -126,6 +126,11 @@ function navigateToMacroCalculator() {
     document.getElementById("macro-calculator-container").style.display = "block";
 }
 
+function navigateToSavedWorkouts() {
+    document.getElementById("menu-container").style.display = "none";
+    document.getElementById("saved-workouts-container").style.display = "block";
+}
+
 async function calculateBMI() {
     const weight = parseFloat(document.getElementById("weight").value);
     const feet = parseFloat(document.getElementById("height-feet").value);
@@ -231,7 +236,7 @@ function displayExercisesByGoal(exercises) {
             <div class="exercise-meta">
                 <span>Type: ${ex.type}</span>
                 <span>Duration: ${ex.time_minutes} mins</span>
-                <span>Difficulty: ${ex.experience_level.join(", ")}</span>
+                <span>Muscle Group: ${ex.muscleGroup}</span>
             </div>
         </div>
     `).join("");
@@ -247,7 +252,7 @@ function displayExercises(exercises) {
             <div class="exercise-meta">
                 <span>Type: ${ex.type}</span>
                 <span>Duration: ${ex.time_minutes} mins</span>
-                <span>Difficulty: ${ex.experience_level.join(", ")}</span>
+                <span>Muscle Group: ${ex.muscleGroup}</span>
             </div>
         </div>
     `).join("");
@@ -282,9 +287,27 @@ async function generateWorkoutPlan() {
             return;
         }
         displayWorkoutPlan(plan);
+        showSaveButton(plan);
     } catch (error) {
         showResult(`Error: ${error.message}`, true);
     }
+}
+
+function showSaveButton(plan) {
+    const container = document.getElementById("goal-exercise-results");
+    const saveButton = document.createElement("button");
+    saveButton.textContent = "Save Workout";
+    saveButton.className = "btn-save";
+    saveButton.onclick = () => saveWorkoutPlan(plan);
+    container.appendChild(saveButton);
+}
+
+function saveWorkoutPlan(plan) {
+    let savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    savedWorkouts.push(plan);
+    localStorage.setItem("savedWorkouts", JSON.stringify(savedWorkouts));
+    displaySavedWorkouts();
+    showResult("Workout Plan Saved!", false);
 }
 
 function displayWorkoutPlan(plan) {
@@ -303,7 +326,7 @@ function displayWorkoutPlan(plan) {
                         <div class="exercise-meta">
                             <span>Type: ${ex.type}</span>
                             <span>Duration: ${ex.time_minutes} mins</span>
-                            <span>Difficulty: ${ex.experience_level.join(", ")}</span>
+                            <span>Muscle Group: ${ex.muscleGroup}</span>
                         </div>
                     </div>
                 `).join("")}
@@ -331,24 +354,25 @@ function calculateBMR() {
     }
 
     const totalHeightInches = (heightFeet * 12) + heightInches;
+    const heightCm = totalHeightInches * 2.54;
+    const weightKg = weight * 0.453592;
     let bmr;
 
     if (gender === "male") {
-        bmr = 66 + (6.23 * weight) + (12.7 * totalHeightInches) - (6.8 * age);
+        bmr = 10 * weightKg + 6.25 * heightCm - 5 * age + 5;
     } else if (gender === "female") {
-        bmr = 655 + (4.35 * weight) + (4.7 * totalHeightInches) - (4.7 * age);
+        bmr = 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
     } else {
         document.getElementById("macro-result").value = "Invalid gender selected.";
         return;
     }
 
-    let totalCalories = bmr * activityLevel;
+    let totalCalories = bmr * activityLevel - 500;
 
-    if (goal === "fat_loss") {
-        totalCalories -= 500;
-    } else if (goal === "muscle_gain") {
-        totalCalories += 500;
-    }
+    console.log(`Weight: ${weight} lbs (${weightKg.toFixed(2)} kg)`);
+    console.log(`Height: ${totalHeightInches} inches (${heightCm.toFixed(2)} cm)`);
+    console.log(`BMR: ${bmr.toFixed(2)} calories/day`);
+    console.log(`Total Calories: ${totalCalories.toFixed(2)} calories/day`);
 
     document.getElementById("macro-result").value = 
         `Based on your physical data and goals, your daily calorie intake should be approximately ${totalCalories.toFixed(2)} calories/day.`;
@@ -357,13 +381,13 @@ function calculateBMR() {
     let proteinPercentage, carbsPercentage, fatsPercentage;
 
     if (goal === "fat_loss") {
-        proteinPercentage = 0.40;
-        carbsPercentage = 0.40;
-        fatsPercentage = 0.20;
-    } else if (goal === "muscle_gain") {
         proteinPercentage = 0.30;
+        carbsPercentage = 0.45;
+        fatsPercentage = 0.25;
+    } else if (goal === "muscle_gain") {
+        proteinPercentage = 0.25;
         carbsPercentage = 0.50;
-        fatsPercentage = 0.20;
+        fatsPercentage = 0.25;
     } else if (goal === "maintenance") {
         proteinPercentage = 0.25;
         carbsPercentage = 0.50;
@@ -383,12 +407,65 @@ function calculateBMR() {
     const carbsPerMeal = carbsGrams / mealsPerDay;
     const fatsPerMeal = fatsGrams / mealsPerDay;
 
+    console.log(`Protein: ${proteinGrams.toFixed(2)}g (${proteinPerMeal.toFixed(2)}g per meal)`);
+    console.log(`Carbs: ${carbsGrams.toFixed(2)}g (${carbsPerMeal.toFixed(2)}g per meal)`);
+    console.log(`Fats: ${fatsGrams.toFixed(2)}g (${fatsPerMeal.toFixed(2)}g per meal)`);
+
     document.getElementById("macro-additional-result").value = 
         `Macronutrient Breakdown:\n` +
         `To achieve your goal, you should consume the following macros daily:\n` +
         `Protein: ${proteinGrams.toFixed(2)}g (${proteinPerMeal.toFixed(2)}g per meal)\n` +
         `Carbs: ${carbsGrams.toFixed(2)}g (${carbsPerMeal.toFixed(2)}g per meal)\n` +
         `Fats: ${fatsGrams.toFixed(2)}g (${fatsPerMeal.toFixed(2)}g per meal)`;
+}
+
+function displaySavedWorkouts() {
+    const savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    const container = document.getElementById("saved-workouts-list");
+    container.innerHTML = savedWorkouts.map((workout, index) => `
+        <div class="saved-workout-item">
+            <span>Workout Plan ${index + 1}</span>
+            <button onclick="toggleWorkoutDetails(${index})" class="btn-view">View</button>
+            <button onclick="removeSavedWorkout(${index})" class="btn-remove">Remove</button>
+            <div id="workout-details-${index}" class="workout-details" style="display: none;">
+                ${workout.map((day, dayIndex) => `
+                    <div class="day-plan">
+                        <h3>Day ${dayIndex + 1}</h3>
+                        ${day.map(ex => `
+                            <div class="exercise-card">
+                                <h3>${ex.name}</h3>
+                                <p>${ex.description}</p>
+                                <div class="exercise-meta">
+                                    <span>Type: ${ex.type}</span>
+                                    <span>Duration: ${ex.time_minutes} mins</span>
+                                    <span>Muscle Group: ${ex.muscleGroup}</span>
+                                </div>
+                            </div>
+                        `).join("")}
+                    </div>
+                `).join("")}
+            </div>
+        </div>
+    `).join("");
+}
+
+function toggleWorkoutDetails(index) {
+    const details = document.getElementById(`workout-details-${index}`);
+    details.style.display = details.style.display === "none" ? "block" : "none";
+}
+
+function removeSavedWorkout(index) {
+    let savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    savedWorkouts.splice(index, 1);
+    localStorage.setItem("savedWorkouts", JSON.stringify(savedWorkouts));
+    displaySavedWorkouts();
+}
+
+function saveWorkout(workout) {
+    let savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    savedWorkouts.push(workout);
+    localStorage.setItem("savedWorkouts", JSON.stringify(savedWorkouts));
+    displaySavedWorkouts();
 }
 
 // Initialize App

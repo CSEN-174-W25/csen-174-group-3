@@ -366,30 +366,62 @@ a:hover::after {
   background: #e9f5ff;
   border-radius: 6px;
   color: var(--text-dark);
+  text-align: center;
 }
 
 .results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin-top: 2rem;
+  align-items: center;
+}
+
+.day-plan {
+  background: #f0f4f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .exercise-card {
-  padding: 1.5rem;
   background: white;
-  border: 2px solid #eee;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.exercise-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+}
+
+.exercise-card p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-dark);
 }
 
 .exercise-meta {
-  margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.exercise-meta span {
+  background: #e9f5ff;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
 }
 
 .error {
@@ -491,6 +523,10 @@ a:hover::after {
     letter-spacing: 0.3px;
     line-height: 1.5;
   }
+
+  .exercise-card {
+    width: 90%;
+  }
 }
 
 .hero-title, .main-title {
@@ -530,4 +566,94 @@ label {
 
 .btn-logout:active {
   transform: scale(0.95);
+}
+
+.saved-workout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.btn-remove {
+  background: var(--error-red);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4);
+}
+
+.btn-remove:hover {
+  background: #c0392b;
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.6);
+  transform: scale(1.05);
+}
+
+.btn-remove:active {
+  transform: scale(0.95);
+}
+
+.btn-save {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px var(--button-shadow);
+}
+
+.btn-save:hover {
+  background: var(--secondary-blue);
+  box-shadow: 0 6px 12px var(--button-shadow);
+  transform: scale(1.05);
+}
+
+.btn-save:active {
+  transform: scale(0.95);
+}
+
+.btn-view {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px var(--button-shadow);
+}
+
+.btn-view:hover {
+  background: var(--secondary-blue);
+  box-shadow: 0 6px 12px var(--button-shadow);
+  transform: scale(1.05);
+}
+
+.btn-view:active {
+  transform: scale(0.95);
+}
+
+.workout-details {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f0f4f8;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
