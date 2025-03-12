@@ -424,9 +424,11 @@ function displaySavedWorkouts() {
     const container = document.getElementById("saved-workouts-list");
     container.innerHTML = savedWorkouts.map((workout, index) => `
         <div class="saved-workout-item">
+            <div class="workout-controls">
+                <button onclick="toggleWorkoutDetails(${index})" class="btn-view">View</button>
+                <button onclick="removeSavedWorkout(${index})" class="btn-remove">Remove</button>
+            </div>
             <span>Workout Plan ${index + 1}</span>
-            <button onclick="toggleWorkoutDetails(${index})" class="btn-view">View</button>
-            <button onclick="removeSavedWorkout(${index})" class="btn-remove">Remove</button>
             <div id="workout-details-${index}" class="workout-details" style="display: none;">
                 ${workout.map((day, dayIndex) => `
                     <div class="day-plan">
