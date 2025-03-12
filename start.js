@@ -18,6 +18,7 @@ class Auth {
             document.getElementById("app-container").style.display = "block";
             document.getElementById("auth-container").style.display = "none";
             document.querySelector('.hero-section').style.display = 'none';
+            loadSavedWorkouts();
         } else {
             this.showMessage("Invalid credentials", "error");
         }
@@ -26,6 +27,9 @@ class Auth {
     static logOut() {
         localStorage.removeItem("currentUser");
         document.querySelector('.hero-section').style.display = 'block';
+        document.getElementById("app-container").style.display = "none";
+        document.getElementById("auth-container").style.display = "block";
+        document.getElementById("saved-workouts-list").innerHTML = ""; // Clear the workout display
         window.location.reload();
     }
 
@@ -303,9 +307,16 @@ function showSaveButton(plan) {
 }
 
 function saveWorkoutPlan(plan) {
-    let savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedWorkoutsKey = `savedWorkouts_${currentUser}`;
+    let savedWorkouts = JSON.parse(localStorage.getItem(savedWorkoutsKey)) || [];
     savedWorkouts.push(plan);
-    localStorage.setItem("savedWorkouts", JSON.stringify(savedWorkouts));
+    localStorage.setItem(savedWorkoutsKey, JSON.stringify(savedWorkouts));
     displaySavedWorkouts();
     showResult("Workout Plan Saved!", false);
 }
@@ -420,7 +431,14 @@ function calculateBMR() {
 }
 
 function displaySavedWorkouts() {
-    const savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedWorkoutsKey = `savedWorkouts_${currentUser}`;
+    const savedWorkouts = JSON.parse(localStorage.getItem(savedWorkoutsKey)) || [];
     const container = document.getElementById("saved-workouts-list");
     container.innerHTML = savedWorkouts.map((workout, index) => `
         <div class="saved-workout-item">
@@ -457,17 +475,70 @@ function toggleWorkoutDetails(index) {
 }
 
 function removeSavedWorkout(index) {
-    let savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedWorkoutsKey = `savedWorkouts_${currentUser}`;
+    let savedWorkouts = JSON.parse(localStorage.getItem(savedWorkoutsKey)) || [];
     savedWorkouts.splice(index, 1);
-    localStorage.setItem("savedWorkouts", JSON.stringify(savedWorkouts));
-    displaySavedWorkouts();
+    localStorage.setItem(savedWorkoutsKey, JSON.stringify(savedWorkouts));
+    loadSavedWorkouts();
 }
 
 function saveWorkout(workout) {
-    let savedWorkouts = JSON.parse(localStorage.getItem("savedWorkouts")) || [];
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedWorkoutsKey = `savedWorkouts_${currentUser}`;
+    let savedWorkouts = JSON.parse(localStorage.getItem(savedWorkoutsKey)) || [];
     savedWorkouts.push(workout);
-    localStorage.setItem("savedWorkouts", JSON.stringify(savedWorkouts));
-    displaySavedWorkouts();
+    localStorage.setItem(savedWorkoutsKey, JSON.stringify(savedWorkouts));
+    loadSavedWorkouts();
+}
+
+function loadSavedWorkouts() {
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedWorkoutsKey = `savedWorkouts_${currentUser}`;
+    const savedWorkouts = JSON.parse(localStorage.getItem(savedWorkoutsKey)) || [];
+    const container = document.getElementById("saved-workouts-list");
+    container.innerHTML = savedWorkouts.map((workout, index) => `
+        <div class="saved-workout-item">
+            <div class="workout-controls">
+                <button onclick="toggleWorkoutDetails(${index})" class="btn-view">View</button>
+                <button onclick="removeSavedWorkout(${index})" class="btn-remove">Remove</button>
+            </div>
+            <span>Workout Plan ${index + 1}</span>
+            <div id="workout-details-${index}" class="workout-details" style="display: none;">
+                ${workout.map((day, dayIndex) => `
+                    <div class="day-plan">
+                        <h3>Day ${dayIndex + 1}</h3>
+                        ${day.map(ex => `
+                            <div class="exercise-card">
+                                <h3>${ex.name}</h3>
+                                <p>${ex.description}</p>
+                                <div class="exercise-meta">
+                                    <span>Type: ${ex.type}</span>
+                                    <span>Duration: ${ex.time_minutes} mins</span>
+                                    <span>Muscle Group: ${ex.muscleGroup}</span>
+                                </div>
+                            </div>
+                        `).join("")}
+                    </div>
+                `).join("")}
+            </div>
+        </div>
+    `).join("");
 }
 
 // Initialize App
