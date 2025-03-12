@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="start.css">
+    <title>Saved Exercises - FitBuilder</title>
+</head>
+<body>
+    <!-- Saved Exercises -->
+    <div id="saved-exercises-container" class="content-container">
+        <button onclick="navigateToMenu()" class="btn-back">← Back to Menu</button>
+        <h2 class="workout-plan-title">Saved Exercises</h2>
+        <div class="important-message">
+            Here you can view and manage your saved exercises.
+        </div>
+        <div id="saved-exercises-list" class="results-grid"></div>
+    </div>
+
+    <script src="start.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            displaySavedExercises();
+        });
+
+        function navigateToMenu() {
+            window.location.href = "start.html";
+        }
+    </script>
+</body>
+</html>

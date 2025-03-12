@@ -50,6 +50,7 @@
             <button onclick="navigateToExerciseSearch()" class="btn-main">Search Exercises by Muscle Group</button>
             <button onclick="navigateToMacroCalculator()" class="btn-main">Macro & Calorie Calculator</button>
             <button onclick="navigateToSavedWorkouts()" class="btn-main">Saved Workouts</button>
+            <button onclick="navigateToSavedExercises()" class="btn-main">Saved Exercises</button>
             <button onclick="Auth.logOut()" class="btn-logout">Log Out</button>
         </div>
 
@@ -215,6 +216,16 @@
                 Here you can view and manage your saved workouts.
             </div>
             <div id="saved-workouts-list" class="results-grid"></div>
+        </div>
+
+        <!-- Saved Exercises -->
+        <div id="saved-exercises-container" class="content-container" style="display: none;">
+            <button onclick="navigateToMenu()" class="btn-back">← Back to Menu</button>
+            <h2 class="workout-plan-title">Saved Exercises</h2>
+            <div class="important-message">
+                Here you can view and manage your saved exercises.
+            </div>
+            <div id="saved-exercises-list" class="results-grid"></div>
         </div>
     </div>
 

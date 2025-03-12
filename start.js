@@ -135,12 +135,16 @@ function navigateToSavedWorkouts() {
     document.getElementById("saved-workouts-container").style.display = "block";
 }
 
+function navigateToSavedExercises() {
+    window.location.href = "saved-exercises.html";
+}
+
 async function calculateBMI() {
     const weight = parseFloat(document.getElementById("weight").value);
     const feet = parseFloat(document.getElementById("height-feet").value);
     const inches = parseFloat(document.getElementById("height-inches").value);
 
-    if ([weight, feet, inches].some(isNaN)) {
+    if (isNaN(weight) || isNaN(feet) || isNaN(inches)) {
         showResult("Please fill all fields with valid numbers", true);
         return;
     }
@@ -246,6 +250,38 @@ function displayExercisesByGoal(exercises) {
     `).join("");
 }
 
+function saveExercise(exerciseCode) {
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedExercisesKey = `savedExercises_${currentUser}`;
+    let savedExercises = JSON.parse(localStorage.getItem(savedExercisesKey)) || [];
+
+    // Fetch the exercise details
+    FitnessManager.loadWorkouts().then(workouts => {
+        const exercise = workouts.find(ex => ex.code === exerciseCode);
+        if (!exercise) {
+            showResult("Exercise not found.", true);
+            return;
+        }
+
+        // Prevent duplicate exercises
+        if (savedExercises.some(e => e.code === exercise.code)) {
+            showResult("Exercise already saved.", true);
+            return;
+        }
+
+        savedExercises.push(exercise);
+        localStorage.setItem(savedExercisesKey, JSON.stringify(savedExercises));
+        showResult("Exercise Saved!", false);
+    }).catch(error => {
+        showResult(`Error: ${error.message}`, true);
+    });
+}
+
 function displayExercises(exercises) {
     const container = document.getElementById("exercise-results");
     console.log("Displaying exercises:", exercises); // Debugging line
@@ -258,6 +294,7 @@ function displayExercises(exercises) {
                 <span>Duration: ${ex.time_minutes} mins</span>
                 <span>Muscle Group: ${ex.muscleGroup}</span>
             </div>
+            <button onclick='saveExercise("${ex.code}")' class="btn-save">Save Exercise</button>
         </div>
     `).join("");
 }
@@ -378,7 +415,7 @@ function calculateBMR() {
         return;
     }
 
-    let totalCalories = bmr * activityLevel - 500;
+    let totalCalories = bmr * activityLevel - 250;
 
     console.log(`Weight: ${weight} lbs (${weightKg.toFixed(2)} kg)`);
     console.log(`Height: ${totalHeightInches} inches (${heightCm.toFixed(2)} cm)`);
@@ -539,6 +576,50 @@ function loadSavedWorkouts() {
             </div>
         </div>
     `).join("");
+}
+
+function displaySavedExercises() {
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedExercisesKey = `savedExercises_${currentUser}`;
+    const savedExercises = JSON.parse(localStorage.getItem(savedExercisesKey)) || [];
+    const container = document.getElementById("saved-exercises-list");
+
+    if (savedExercises.length === 0) {
+        container.innerHTML = "<p>You haven't saved any exercises yet.</p>";
+        return;
+    }
+
+    container.innerHTML = savedExercises.map((ex, index) => `
+        <div class="exercise-card">
+            <h3>${ex.name}</h3>
+            <p>${ex.description}</p>
+            <div class="exercise-meta">
+                <span>Type: ${ex.type}</span>
+                <span>Duration: ${ex.time_minutes} mins</span>
+                <span>Muscle Group: ${ex.muscleGroup}</span>
+            </div>
+            <button onclick="removeSavedExercise(${index})" class="btn-remove">Remove</button>
+        </div>
+    `).join("");
+}
+
+function removeSavedExercise(index) {
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        showResult("No user is currently logged in.", true);
+        return;
+    }
+
+    const savedExercisesKey = `savedExercises_${currentUser}`;
+    let savedExercises = JSON.parse(localStorage.getItem(savedExercisesKey)) || [];
+    savedExercises.splice(index, 1);
+    localStorage.setItem(savedExercisesKey, JSON.stringify(savedExercises));
+    displaySavedExercises();
 }
 
 // Initialize App
