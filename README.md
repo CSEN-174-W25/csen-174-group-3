@@ -10,4 +10,6 @@ Team Members:
 
 Salvador Solana Allende: ssolanaallende@scu.edu
 
-Brandon Nhin: bnhin@scu.edu
+pages:
+https://csen-174-w25.github.io/csen-174-group-3/start.html
+
