@@ -1,0 +1,29 @@
+{
+  "name": "csen-174-group-3",
+  "version": "1.0.0",
+  "description": "Maintaining a consistent workout routine is challenging for individuals juggling busy schedules, diverse fitness goals, and limited access to resources. To those unfamiliar with working out, even just planning a routine will add some difficulty when starting out. These challenges often lead to inefficient workouts, lack of motivation, and suboptimal results. There is a need for a solution that simplifies workout planning, adapts to individual needs, and optimizes time spent exercising.",
+  "main": "start.js",
+  "scripts": {
+    "test": "mocha start.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSEN-174-W25/csen-174-group-3.git"
+  },
+  "keywords": [],
+  "author": "Salvador Solana Allende",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CSEN-174-W25/csen-174-group-3/issues"
+  },
+  "homepage": "https://github.com/CSEN-174-W25/csen-174-group-3#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "chai": "^4.3.4",
+    "jsdom": "^16.4.0",
+    "mocha": "^9.1.3",
+    "sinon": "^11.1.2"
+  }
+}
